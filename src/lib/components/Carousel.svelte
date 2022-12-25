@@ -2,6 +2,7 @@
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '../css/splide-default.min.css';
 	import { onMount } from 'svelte';
+	import { BASE_PRODUCT_IMAGE_URL } from '$lib/consts';
 	export let images: Array<string>;
 
 	let main: Splide;
@@ -50,7 +51,7 @@
 			<SplideSlide>
 				<img
 					style="display: block; margin: auto; max-height: 100%; max-width: 100%;"
-					src="src/images/carousel/{image}"
+					src="{BASE_PRODUCT_IMAGE_URL}{image}"
 					alt={image}
 				/>
 			</SplideSlide>
@@ -59,7 +60,7 @@
 	<Splide options={thumbsOptions} bind:this={thumbs}>
 		{#each images as image}
 			<SplideSlide>
-				<img src="src/images/carousel/{image}" alt={image} />
+				<img src="{BASE_PRODUCT_IMAGE_URL}{image}" alt={image} />
 			</SplideSlide>
 		{/each}
 	</Splide>

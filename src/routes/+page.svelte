@@ -1,14 +1,11 @@
 <!-- out:scale={{ duration: 4000, opacity: 0.9 }} -->
 <script lang="ts">
-	import type PageData from '@sveltejs/kit';
 	/** @type {import('./$types').PageData} */
 	export let data: App.PageData;
-	import Header from '../components/Header.svelte';
-	import Carousel from '../components/Carousel.svelte';
-	let unique = {};
+	console.log(data);
+	import Carousel from '$lib/components/Carousel.svelte';
 </script>
 
-<Header />
 <Carousel images={data.images} />
 
 <link href="https://fonts.googleapis.com/css?family=Overpass:100,400" rel="stylesheet" />

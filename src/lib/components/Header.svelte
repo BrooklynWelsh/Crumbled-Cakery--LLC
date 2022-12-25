@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { logo } from './../shape.js';
+	import { logo } from '$lib/images/logo/shape.js';
 	import { quintOut, quadIn, sineIn } from 'svelte/easing';
 	import { fade, draw, fly, scale } from 'svelte/transition';
 </script>
 
 <header>
-	<a>Order</a>
+	<a href="/order">Order</a>
 	<a>About</a>
 	<svg
 		id="header-logo"
