@@ -37,9 +37,6 @@ export class DefaultOrderForm implements IDefaultOrderForm {
     comments!: GenericFieldTypes.FreeTextInput;
     nonDefaultOptions!: Array<GenericFieldTypes.ValidFormField>;
 
-    getMaxColors() {
-        return this.maxColors;
-    }
 
     // public createForm(): void {
     //     for (const key of IDefaultOrderForm.keys(this)) {
@@ -50,19 +47,36 @@ export class DefaultOrderForm implements IDefaultOrderForm {
     //     }
     // }
 
+
     public keys<T extends IDefaultOrderForm>() {
         return Object.keys(this) as Array<keyof T>;
     }
 
-    public getOptions(): Array<GenericFieldTypes.ValidFormField> {
-        const options: Array<GenericFieldTypes.ValidFormField> = []
+    // Return all fields that represent option objects (i.e. exclude primitives and any non-valid objects)
+    public getOptions(): Map<number, GenericFieldTypes.ValidFormField> {
+        const options: Map<number, GenericFieldTypes.ValidFormField> = new Map();
         for (const key of this.keys()) {
             const value = this[key as keyof IDefaultOrderForm]
             if (GenericFieldTypes.isFormField(value)) {
-                options.push(value)
+                // If valid and default field, check index and add to map
+                if (options.has(value.index)) {
+                    throw new Error("Duplicate option index found, aborting form creation.")
+                }
+                options.set(value.index, value)
+            } else if (Array.isArray(value)) {
+                // Unpack non-default options
+                for (const nonDefaultOption of value) {
+                    if (GenericFieldTypes.isFormField(nonDefaultOption)) {
+                        if (options.has(nonDefaultOption.index)) {
+                            throw new Error("Duplicate option index found, aborting form creation.")
+                        }
+                        options.set(nonDefaultOption.index, nonDefaultOption)
+                    }
+                }
             }
         }
-        return options
+        // Sort map by indices
+        return new Map([...options].sort((a, b) => a[0] - b[0]));
     }
 
     constructor(productObject: IDefaultOrderForm) {

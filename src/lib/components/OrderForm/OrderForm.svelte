@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { IDefaultOrderForm, DefaultOrderForm } from '../../../types/type.GenericOrderForm';
+	import type { IDefaultOrderForm, DefaultOrderForm } from '../../../types/GenericOrderForm';
 	import OrderFormField from './OrderFormField.svelte';
 	import {
 		isFormField,
@@ -17,7 +17,7 @@
 	<h4>Starting at ${form.startingPrice}</h4>
 	<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
 	<form>
-		{#each form.getOptions() as option}
+		{#each [...form.getOptions().values()] as option}
 			<OrderFormField fieldData={option} />
 		{/each}
 	</form>
