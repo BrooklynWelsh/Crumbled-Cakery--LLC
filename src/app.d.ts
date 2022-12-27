@@ -41,8 +41,8 @@ declare namespace OrderForm {
 	}
 
 	interface IDefaultOrderForm {
-		startingPrice: number,
-		count: CountField,
+		startingPrice: number = -1,
+		count: CountField = {},
 		style: RadioOptionField,
 		colors: FreeTextField,
 		addOns: FreeTextField,

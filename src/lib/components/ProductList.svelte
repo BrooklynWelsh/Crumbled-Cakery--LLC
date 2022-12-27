@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { MasonryInfiniteGrid } from '@egjs/svelte-infinitegrid';
 	export let products: { name: string; imageLoc: string; link: string }[];
 </script>
 

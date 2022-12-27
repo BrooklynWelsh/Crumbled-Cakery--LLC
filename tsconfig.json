@@ -8,7 +8,15 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
+		"strict": true,
+		"paths": {
+			"$specificOrderForms": [
+				"src/types/SpecificOrderForms"
+			],
+			"$specificOrderForms/*": [
+				"src/types/SpecificOrderForms/*"
+			],
+		},
 	},
 	"types": [
 		"@cloudflare/workers-types"

@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import path from 'node:path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,6 +10,11 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		alias: {
+			'$specific-order-forms': path.resolve('src/types/SpecificOrderForms'),
+			$specificOrderForms: path.resolve('src/types/SpecificOrderForms'),
+			specificOrderForms: path.resolve('src/types/SpecificOrderForms')
+		}
 	}
 };
 
