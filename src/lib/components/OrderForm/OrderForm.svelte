@@ -1,39 +1,25 @@
 <script lang="ts">
-	import type { IDefaultOrderForm } from '../../../types/type.GenericOrderForm';
+	import type { IDefaultOrderForm, DefaultOrderForm } from '../../../types/type.GenericOrderForm';
 	import OrderFormField from './OrderFormField.svelte';
 	import {
 		isFormField,
 		isRadioField,
-		isFreeTextField
+		isFreeTextInput
 	} from '../../../types/GenericOrderFormFields';
 
-	async function importOrderForm() {
-		const orderFormFile = `./../../../../src/types/SpecificOrderForms/${formType}.ts`;
-		const orderFormModule = await import(orderFormFile);
-		const orderFormObject = new orderFormModule.default();
-
-		const options = [];
-		for (const key of Object.keys(orderFormObject)) {
-			const value = orderFormObject[key as keyof IDefaultOrderForm];
-			if (isFormField(value)) {
-				options.push(value);
-			}
-		}
-		console.log(options);
-		return options;
-	}
 	export let formType: string;
-
-	let formPromise = importOrderForm();
+	export let form: DefaultOrderForm;
+	console.log(form);
 </script>
 
 <div id="form-container">
+	<h2>{form.productName}</h2>
+	<h4>Starting at ${form.startingPrice}</h4>
+	<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
 	<form>
-		{#await formPromise then options}
-			{#each options as option}
-				<OrderFormField fieldData={option} />
-			{/each}
-		{/await}
+		{#each form.getOptions() as option}
+			<OrderFormField fieldData={option} />
+		{/each}
 	</form>
 </div>
 

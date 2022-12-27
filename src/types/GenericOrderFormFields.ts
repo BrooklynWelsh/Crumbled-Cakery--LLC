@@ -1,41 +1,45 @@
+export type ValidFormField = RadioInput | FreeTextInput & { key: string }
 export interface RadioOption {
+    index: number,
     name: string,
     price: number
 }
 
-export interface RadioOptionField {
+export interface RadioInput {
     id: string,
+    index: number,
     title: string,
     options: Array<RadioOption>,
 }
 
-export interface CountField extends RadioOptionField {
-    minimum: string
+export interface CountField extends RadioInput {
+    minimum: number
 }
 
-export interface FreeTextField {
+export interface FreeTextInput {
     id: string,
+    index: number,
     title: string,
     description: string,
 }
 
-export interface ColorField extends FreeTextField {
+export interface ColorField extends FreeTextInput {
     maxColors: number
 }
 
-export function isFreeTextField(field: FreeTextField | RadioOptionField): field is FreeTextField {
-    return (field as FreeTextField).description !== undefined
+export function isFreeTextInput(field: FreeTextInput | RadioInput): field is FreeTextInput {
+    return (field as FreeTextInput).description !== undefined
 }
 
-export function isRadioField(field: RadioOptionField | FreeTextField): field is RadioOptionField {
-    return (field as RadioOptionField).options !== undefined
+export function isRadioField(field: RadioInput | FreeTextInput): field is RadioInput {
+    return (field as RadioInput).options !== undefined
 }
 
-export function isFormField(field: unknown): field is boolean | RadioOptionField | FreeTextField {
-    return (field as RadioOptionField).options !== undefined || (field as FreeTextField).description !== undefined || false;
+export function isFormField(field: unknown): field is boolean | ValidFormField {
+    return (field as RadioInput).options !== undefined || (field as FreeTextInput).description !== undefined || false;
 }
 
-export function createFieldsElement(optionObject: RadioOptionField | FreeTextField): string {
+export function createFieldsElement(optionObject: RadioInput | FreeTextInput): string {
     const fieldset = document.createElement('fieldset');
 
     const legendHtml = `<legend>${optionObject.title}</legend>`
@@ -51,7 +55,7 @@ export function createFieldsElement(optionObject: RadioOptionField | FreeTextFie
 
             fieldset.appendChild(thisOption)
         }
-    } else if (isFreeTextField(optionObject)) {
+    } else if (isFreeTextInput(optionObject)) {
         const id = optionObject.title.toLowerCase()
         const freeTextHtml = `<label for="${id}">${optionObject.description}</label> <textarea form="order-form" id="${id}" name="${optionObject.title}" />`
 

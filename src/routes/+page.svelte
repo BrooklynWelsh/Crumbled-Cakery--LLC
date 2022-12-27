@@ -2,7 +2,6 @@
 <script lang="ts">
 	/** @type {import('./$types').PageData} */
 	export let data: App.PageData;
-	console.log(data);
 	import Carousel from '$lib/components/Carousel.svelte';
 </script>
 

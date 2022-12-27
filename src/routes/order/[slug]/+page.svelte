@@ -3,4 +3,4 @@
 	export let data;
 </script>
 
-<OrderForm formType={data.formType} />
+<OrderForm form={data.form} />

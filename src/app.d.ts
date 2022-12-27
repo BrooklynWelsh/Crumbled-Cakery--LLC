@@ -20,44 +20,44 @@ declare namespace OrderForm {
 		price: number
 	}
 
-	interface RadioOptionField {
+	interface RadioInput {
 		title: string,
 		element: RadioNodeList,
 		options: Array<RadioOption>
 	}
 
-	interface CountField extends RadioOptionField {
+	interface CountField extends RadioInput {
 		minimum: string
 	}
 
-	interface FreeTextField {
+	interface FreeTextInput {
 		title: string,
 		description: string,
 		element: HTMLTextAreaElement,
 	}
 
-	interface ColorField extends FreeTextField {
+	interface ColorField extends FreeTextInput {
 		maxColors: number
 	}
 
 	interface IDefaultOrderForm {
 		startingPrice: number = -1,
 		count: CountField = {},
-		style: RadioOptionField,
-		colors: FreeTextField,
-		addOns: FreeTextField,
-		comments: FreeTextField
+		style: RadioInput,
+		colors: FreeTextInput,
+		addOns: FreeTextInput,
+		comments: FreeTextInput
 	}
 
 	interface ICakeOrderForm extends IDefaultOrderForm {
-		layers: RadioOptionField,
-		flavors: RadioOptionField,
-		event: RadioOptionField,
-		toppers: RadioOptionField
+		layers: RadioInput,
+		flavors: RadioInput,
+		event: RadioInput,
+		toppers: RadioInput
 	}
 
 	interface ISugarCookieOrderForm extends IDefaultOrderForm {
-		event: RadioOptionField
+		event: RadioInput
 	}
 
 	class DefaultOrderForm implements IDefaultOrderForm {

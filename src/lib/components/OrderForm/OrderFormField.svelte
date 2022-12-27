@@ -1,11 +1,11 @@
 <script lang="ts">
 	import * as GenericFieldTypes from './../../../types/GenericOrderFormFields';
-	export let fieldData: GenericFieldTypes.RadioOptionField | GenericFieldTypes.FreeTextField;
+	export let fieldData: GenericFieldTypes.ValidFormField;
 </script>
 
 <fieldset>
 	<legend>{fieldData.title}</legend>
-	{#if GenericFieldTypes.isFreeTextField(fieldData)}
+	{#if GenericFieldTypes.isFreeTextInput(fieldData)}
 		<p>{fieldData.description}</p>
 		<textarea form="order-form" id={fieldData.id} name={fieldData.title} />
 	{:else if GenericFieldTypes.isRadioField(fieldData)}
