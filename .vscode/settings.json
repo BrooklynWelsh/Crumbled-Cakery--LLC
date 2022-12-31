@@ -1,3 +1,14 @@
 {
-    "svg.preview.background": "transparent"
+    "files.autoSave": "onFocusChange",
+    "svg.preview.background": "transparent",
+    "standard.engine": "ts-standard",
+    "standard.validate": [
+        "javascript",
+        "typescript",
+    ],
+    "standard.autoFixOnSave": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.formatOnSave": true
+    }
 }
