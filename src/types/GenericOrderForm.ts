@@ -13,6 +13,7 @@ export interface IDefaultOrderForm {
     productName: string;
     maxColors: number;
     startingPrice: number;
+    imageFilePath: string;
 
     // Form input vars
     count: GenericFieldTypes.CountField;
@@ -21,6 +22,9 @@ export interface IDefaultOrderForm {
     addOns: GenericFieldTypes.FreeTextInput;
     comments: GenericFieldTypes.FreeTextInput;
     nonDefaultOptions: Array<GenericFieldTypes.ValidFormField> | null;
+
+    // Other data which can be ignored
+    [otherData: string]: unknown;
 }
 
 export type test = GenericFieldTypes.ValidFormField & IDefaultOrderForm
@@ -30,12 +34,14 @@ export class DefaultOrderForm implements IDefaultOrderForm {
     productName!: string;
     maxColors!: number;
     startingPrice!: number;
+    imageFilePath!: string;
     count!: GenericFieldTypes.CountField;
     style!: GenericFieldTypes.RadioInput;
     colors!: GenericFieldTypes.FreeTextInput;
     addOns!: GenericFieldTypes.FreeTextInput;
     comments!: GenericFieldTypes.FreeTextInput;
     nonDefaultOptions!: Array<GenericFieldTypes.ValidFormField>;
+    [otherData: string]: unknown;
 
 
     // public createForm(): void {

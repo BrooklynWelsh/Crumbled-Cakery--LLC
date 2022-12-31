@@ -16,6 +16,15 @@
 			"$specificOrderForms/*": [
 				"src/types/SpecificOrderForms/*"
 			],
+			"$lib": [
+				"src/lib"
+			],
+			"$lib/*": [
+				"src/lib/*"
+			],
+			"$src": [
+				"src/"
+			]
 		},
 	},
 	"types": [

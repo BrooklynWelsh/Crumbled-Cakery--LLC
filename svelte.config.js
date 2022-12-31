@@ -13,9 +13,11 @@ const config = {
 		alias: {
 			'$specific-order-forms': path.resolve('src/types/SpecificOrderForms'),
 			$specificOrderForms: path.resolve('src/types/SpecificOrderForms'),
-			specificOrderForms: path.resolve('src/types/SpecificOrderForms')
+			specificOrderForms: path.resolve('src/types/SpecificOrderForms'),
+			$src: path.resolve('./src/')
 		}
-	}
+	},
+	compilerOptions: {}
 };
 
 export default config;

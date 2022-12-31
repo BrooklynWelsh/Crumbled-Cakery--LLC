@@ -35,7 +35,7 @@ export function isRadioField(field: RadioInput | FreeTextInput): field is RadioI
     return (field as RadioInput).options !== undefined
 }
 
-export function isFormField(field: unknown): field is boolean | ValidFormField {
+export function isFormField(field: unknown): field is ValidFormField {
     return (field as RadioInput).options !== undefined || (field as FreeTextInput).description !== undefined || false;
 }
 

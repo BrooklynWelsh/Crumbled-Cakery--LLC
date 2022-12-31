@@ -3,7 +3,7 @@
 	import '../css/splide-default.min.css';
 	import { onMount } from 'svelte';
 	import { BASE_PRODUCT_IMAGE_URL } from '$lib/consts';
-	export let images: Array<string>;
+	export let imageGlob: object;
 
 	let main: Splide;
 	let thumbs: SplideSlide;
@@ -38,6 +38,11 @@
 		}
 	};
 
+	const urls: string[] = [];
+	for (const path in imageGlob) {
+		urls.push(path);
+	}
+
 	onMount(() => {
 		if (main && thumbs) {
 			main.sync(thumbs.splide);
@@ -47,20 +52,20 @@
 
 <div class="wrapper">
 	<Splide options={mainOptions} bind:this={main} aria-labelledby="thumbnails-example-heading">
-		{#each images as image}
+		{#each urls as image}
 			<SplideSlide>
 				<img
 					style="display: block; margin: auto; max-height: 100%; max-width: 100%;"
-					src="{BASE_PRODUCT_IMAGE_URL}{image}"
+					src="{image}"
 					alt={image}
 				/>
 			</SplideSlide>
 		{/each}
 	</Splide>
 	<Splide options={thumbsOptions} bind:this={thumbs}>
-		{#each images as image}
+		{#each urls as image}
 			<SplideSlide>
-				<img src="{BASE_PRODUCT_IMAGE_URL}{image}" alt={image} />
+				<img src="{image}" alt={image} />
 			</SplideSlide>
 		{/each}
 	</Splide>

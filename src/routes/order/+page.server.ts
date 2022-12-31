@@ -1,10 +1,10 @@
-import cake from '$lib/images/products/Caramel_Wafer_Cake.jpg';
-import cupcakes from '$lib/images/products/Frog_Cupcakes.jpg';
-import cakePops from '$lib/images/products/placeholders/cakepop_placeholder.jpg';
-import miniCupcakes from '$lib/images/products/placeholders/mini_cupcake_placeholder.jpg';
-import sugarCookies from '$lib/images/products/placeholders/sugar_cookie_placeholder.jpg';
-import specialOrder from '$lib/images/products/placeholders/special_order_placeholder.jpg';
-import rentals from '$lib/images/products/placeholders/rentals_placeholder.jpg';
+import cake from '$src/images/products/Caramel_Wafer_Cake.jpg';
+import cupcakes from '$src/images/products/Frog_Cupcakes.jpg';
+import cakePops from '$src/images/products/placeholders/cakepop_placeholder.jpg';
+import miniCupcakes from '$src/images/products/placeholders/mini_cupcake_placeholder.jpg';
+import sugarCookies from '$src/images/products/placeholders/sugar_cookie_placeholder.jpg';
+import specialOrder from '$src/images/products/placeholders/special_order_placeholder.jpg';
+import rentals from '$src/images/products/placeholders/rentals_placeholder.jpg';
 
 /** @type {import('./$types').PageServerLoad} */
 export function load() {

@@ -14,6 +14,11 @@ declare namespace App {
 	}
 }
 
+declare module '*.svg?component' {
+	const content: ConstructorOfATypedSvelteComponent
+	export default content
+}
+
 declare namespace OrderForm {
 	interface RadioOption {
 		name: string,

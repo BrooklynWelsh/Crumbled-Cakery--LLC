@@ -93,7 +93,7 @@
 		width: 80%;
 		margin: 10% auto;
 		height: inherit;
-		max-height: 75%;
+		max-height: 100%;
 		max-width: 100%;
 	}
 

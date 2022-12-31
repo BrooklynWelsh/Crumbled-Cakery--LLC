@@ -33,6 +33,7 @@ export function load({ params }) {
     productName: "Cakes",
     maxColors: maxColors,
     startingPrice: 1.11,
+    imageFilePath: "$",
     count: { index: 0, id: "count", title: "Tiers", minimum: 0, options: [{ index: 0, name: "", price: -1 }] },
     colors: {
       index: 2,

@@ -2,10 +2,12 @@
 <script lang="ts">
 	/** @type {import('./$types').PageData} */
 	export let data: App.PageData;
+	const urls = import.meta.glob('$src/images/products/*.{jpg, png,svg}', { eager: true });
+	console.log(urls);
 	import Carousel from '$lib/components/Carousel.svelte';
 </script>
 
-<Carousel images={data.images} />
+<Carousel imageGlob={urls} />
 
 <link href="https://fonts.googleapis.com/css?family=Overpass:100,400" rel="stylesheet" />
 
