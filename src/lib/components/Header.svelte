@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Logo from '$src/images/logo/Crumbled_Cakery_Logo.svelte';
+	import Logo from '$static/images/logo/Crumbled_Cakery_Logo.svelte';
 	// import { quintOut, quadIn, sineIn } from 'svelte/easing';
 	// import { fade, draw, fly, scale } from 'svelte/transition';
 </script>
@@ -91,7 +91,7 @@
 		display: flex;
 		align-items: center;
 		margin: 0 auto;
-		background-image: url('$src/images/site_template/blurred_header.svg');
+		background-image: url('$static/images/site_template/blurred_header.svg');
 		background-size: cover;
 		border-width: 20px 0 20px 0;
 		border-style: solid;
@@ -124,7 +124,6 @@
 		display: block;
 		width: 100%;
 		height: 65px;
-		/* background-image: url('$src/images/header_effect/torn-border2-bottom.png'); */
 		position: absolute;
 	}
 

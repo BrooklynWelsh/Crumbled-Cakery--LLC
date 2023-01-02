@@ -1,10 +1,10 @@
-import cake from '$src/images/products/Caramel_Wafer_Cake.jpg'
-import cupcakes from '$src/images/products/Frog_Cupcakes.jpg'
-import cakePops from '$src/images/products/placeholders/cakepop_placeholder.jpg'
-import miniCupcakes from '$src/images/products/placeholders/mini_cupcake_placeholder.jpg'
-import sugarCookies from '$src/images/products/placeholders/sugar_cookie_placeholder.jpg'
-import specialOrder from '$src/images/products/placeholders/special_order_placeholder.jpg'
-import rentals from '$src/images/products/placeholders/rentals_placeholder.jpg'
+import cake from '$static/images/products/Caramel_Wafer_Cake.jpg'
+import cupcakes from '$static/images/products/Frog_Cupcakes.jpg'
+import cakePops from '$static/images/products/placeholders/cakepop_placeholder.jpg'
+import miniCupcakes from '$static/images/products/placeholders/mini_cupcake_placeholder.jpg'
+import sugarCookies from '$static/images/products/placeholders/sugar_cookie_placeholder.jpg'
+import specialOrder from '$static/images/products/placeholders/special_order_placeholder.jpg'
+import rentals from '$static/images/products/placeholders/rentals_placeholder.jpg'
 
 /** @type {import('./$types').PageServerLoad} */
 export function load (): object {

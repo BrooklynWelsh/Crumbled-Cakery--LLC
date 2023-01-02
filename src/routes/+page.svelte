@@ -2,7 +2,7 @@
 <script lang="ts">
 	/** @type {import('./$types').PageData} */
 	export let data: App.PageData;
-	const urls = import.meta.glob('$src/images/products/*.{jpg, png,svg}', { eager: true });
+	const urls = import.meta.glob('$static/images/products/*.{jpg, png,svg}', { eager: true });
 	console.log(urls);
 	import Carousel from '$lib/components/Carousel.svelte';
 </script>

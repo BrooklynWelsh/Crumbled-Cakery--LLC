@@ -14,7 +14,8 @@ const config = {
       '$specific-order-forms': path.resolve('src/types/SpecificOrderForms'),
       $specificOrderForms: path.resolve('src/types/SpecificOrderForms'),
       specificOrderForms: path.resolve('src/types/SpecificOrderForms'),
-      $src: path.resolve('./src/')
+      $src: path.resolve('./src/'),
+      $static: path.resolve('./static/')
     }
   },
   compilerOptions: {}
