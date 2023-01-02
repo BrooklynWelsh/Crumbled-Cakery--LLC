@@ -1,11 +1,12 @@
 <script lang="ts">
 	import ProductList from '$lib/components/ProductList.svelte';
-	/** @type {import('./$types').PageData} */
-	export let data: App.PageData;
+	import type { PageData } from './$types';
+	import getProductMetadata from '$lib/utils/client/getProductMetadata';
+	export let data: PageData;
 </script>
 
 <div id="product-grid" />
-<ProductList products={data.products} />
+<ProductList products={getProductMetadata(data)} />
 
 <style>
 </style>

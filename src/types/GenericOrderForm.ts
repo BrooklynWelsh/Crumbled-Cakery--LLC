@@ -16,9 +16,6 @@ export interface IDefaultOrderForm {
   addOns: GenericFieldTypes.FreeTextInput
   comments: GenericFieldTypes.FreeTextInput
   nonDefaultOptions: GenericFieldTypes.ValidFormField[] | null
-
-  // Other data which can be ignored
-  [otherData: string]: unknown
 }
 
 export type test = GenericFieldTypes.ValidFormField & IDefaultOrderForm
@@ -33,17 +30,7 @@ export class DefaultOrderForm implements IDefaultOrderForm {
   colors!: GenericFieldTypes.FreeTextInput
   addOns!: GenericFieldTypes.FreeTextInput
   comments!: GenericFieldTypes.FreeTextInput
-  nonDefaultOptions!: GenericFieldTypes.ValidFormField[];
-  [otherData: string]: unknown;
-
-  // public createForm(): void {
-  //     for (const key of IDefaultOrderForm.keys(this)) {
-  //         const value = this[key as keyof IDefaultOrderForm]
-  //         if (GenericFieldTypes.isFormField(value)) {
-  //             GenericFieldTypes.createFieldsElement(value)
-  //         }
-  //     }
-  // }
+  nonDefaultOptions!: GenericFieldTypes.ValidFormField[]
 
   public keys<T extends IDefaultOrderForm>(): Array<keyof T> {
     return Object.keys(this) as Array<keyof T>

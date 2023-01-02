@@ -3,9 +3,12 @@
 // and what to do when importing types
 import * as types from '@sveltejs/kit'
 declare namespace App {
-  // interface Error {}
+  interface Error {
+  }
   // interface Locals {}
-  // interface PageData {}
+  interface PageData {
+     productsObject?: import ('$types/ProductMetaData').default[],
+  }
   // interface Platform {}
   interface Platform {
     env?: {

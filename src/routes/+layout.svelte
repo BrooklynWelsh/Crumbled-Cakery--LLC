@@ -17,8 +17,12 @@
 
 	:global(body) {
 		font-family: 'Garet Book', sans-serif;
-		overflow: hidden;
+		overflow-y: hidden;
 		margin-top: 0;
+	}
+
+	:global(.body-container) {
+		margin: 2.5% 1%;
 	}
 
 	/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */

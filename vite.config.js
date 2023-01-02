@@ -11,9 +11,8 @@ const config = {
   plugins: [sveltekit()],
   resolve: {
     alias: {
-      '$specific-order-forms': path.resolve('src/types/SpecificOrderForms'),
-      $specificOrderForms: path.resolve('src/types/SpecificOrderForms'),
-      specificOrderForms: path.resolve('src/types/SpecificOrderForms')
+      $static: path.join(__dirname, '/static'),
+      $types: path.join(__dirname, '/src/types')
     }
   },
   test: {

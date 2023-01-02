@@ -1,6 +1,6 @@
 // import { error } from '@sveltejs/kit'
 
-import { DefaultOrderForm } from '../../../types/GenericOrderForm'
+import { DefaultOrderForm } from '$types/GenericOrderForm'
 import type { PageLoad } from './$types'
 export const load = (({ params }) => {
   const maxColors = 4

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as GenericFieldTypes from './../../../types/GenericOrderFormFields';
+	import * as GenericFieldTypes from '$types/GenericOrderFormFields';
 	export let fieldData: GenericFieldTypes.ValidFormField;
 </script>
 

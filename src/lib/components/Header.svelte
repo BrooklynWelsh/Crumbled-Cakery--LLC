@@ -1,5 +1,7 @@
+<svelte:options immutable />
+
 <script lang="ts">
-	import Logo from '$static/images/logo/Crumbled_Cakery_Logo.svelte';
+	import Logo from '$lib/images/logo/Crumbled_Cakery_Logo.svelte';
 	// import { quintOut, quadIn, sineIn } from 'svelte/easing';
 	// import { fade, draw, fly, scale } from 'svelte/transition';
 </script>
@@ -11,7 +13,7 @@
 	<h3>
 		<a>EVENTS</a>
 	</h3>
-	<svelte:component this={Logo} class="logo" />
+	<svelte:component this={Logo} />
 	<h3>
 		<a>CONTACT</a>
 	</h3>
@@ -91,11 +93,11 @@
 		display: flex;
 		align-items: center;
 		margin: 0 auto;
-		background-image: url('$static/images/site_template/blurred_header.svg');
+		background-image: url('/images/site_template/blurred_header.svg');
 		background-size: cover;
 		border-width: 20px 0 20px 0;
 		border-style: solid;
-		border-image-source: url('/src/images/site_template/header_border.svg');
+		border-image-source: url('/images/site_template/header_border.svg');
 		border-image-slice: 38% 0% 0% 7%;
 		border-image-width: 100% 0% 0% 0%;
 	}

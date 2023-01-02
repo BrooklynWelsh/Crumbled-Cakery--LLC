@@ -1,15 +1,18 @@
+<svelte:options immutable />
+
 <script lang="ts">
-	export let products: { name: string; imageLoc: string; link: string }[];
+	import type ProductMetadata from '$types/ProductMetadata';
+	export let products: ProductMetadata[];
 </script>
 
 <div id="product-list">
 	<article class="container">
 		{#each products as product}
 			<article class="thumbnail">
-				<a href={`${product.link}`}>
-					<img src={`${product.imageLoc}`} alt="egjs" />
+				<a href={product.link}>
+					<img src={product.imageLoc} alt="egjs" />
 				</a>
-				<h2 class="info">{`${product.name}`}</h2>
+				<h2 class="info">{product.productName}</h2>
 			</article>
 		{/each}
 	</article>

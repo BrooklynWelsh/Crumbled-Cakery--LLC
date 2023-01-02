@@ -2,8 +2,8 @@
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '../css/splide-default.min.css';
 	import { onMount } from 'svelte';
-	import { BASE_PRODUCT_IMAGE_URL } from '$lib/consts';
-	export let imageGlob: object;
+	import type ProductMetadata from '$types/ProductMetaData';
+	export let metadataObject: ProductMetadata[];
 
 	let main: Splide;
 	let thumbs: SplideSlide;
@@ -38,11 +38,6 @@
 		}
 	};
 
-	const urls: string[] = [];
-	for (const path in imageGlob) {
-		urls.push(path);
-	}
-
 	onMount(() => {
 		if (main && thumbs) {
 			main.sync(thumbs.splide);
@@ -52,20 +47,20 @@
 
 <div class="wrapper">
 	<Splide options={mainOptions} bind:this={main} aria-labelledby="thumbnails-example-heading">
-		{#each urls as image}
+		{#each metadataObject as obj}
 			<SplideSlide>
 				<img
 					style="display: block; margin: auto; max-height: 100%; max-width: 100%;"
-					src="{image}"
-					alt={image}
+					src={obj.imageLoc}
+					alt={obj.imageLoc}
 				/>
 			</SplideSlide>
 		{/each}
 	</Splide>
 	<Splide options={thumbsOptions} bind:this={thumbs}>
-		{#each urls as image}
+		{#each metadataObject as obj}
 			<SplideSlide>
-				<img src="{image}" alt={image} />
+				<img src={obj.imageLoc} alt={obj.productName} />
 			</SplideSlide>
 		{/each}
 	</Splide>

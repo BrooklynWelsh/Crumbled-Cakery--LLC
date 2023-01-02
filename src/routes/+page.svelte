@@ -1,14 +1,14 @@
+<svelte:options immutable={false} />
+
 <!-- out:scale={{ duration: 4000, opacity: 0.9 }} -->
 <script lang="ts">
-	/** @type {import('./$types').PageData} */
-	export let data: App.PageData;
-	const urls = import.meta.glob('$static/images/products/*.{jpg, png,svg}', { eager: true });
-	console.log(urls);
+	import type { PageData } from '$types';
+	export let data: PageData;
 	import Carousel from '$lib/components/Carousel.svelte';
+	import getProductMetadata from '$lib/utils/client/getProductMetadata';
 </script>
 
-<Carousel imageGlob={urls} />
-
+<Carousel metadataObject={getProductMetadata(data)} />
 <link href="https://fonts.googleapis.com/css?family=Overpass:100,400" rel="stylesheet" />
 
 <style>

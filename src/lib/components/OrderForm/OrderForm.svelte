@@ -1,11 +1,6 @@
 <script lang="ts">
-	import type { IDefaultOrderForm, DefaultOrderForm } from '../../../types/GenericOrderForm';
+	import type { DefaultOrderForm } from '$types/GenericOrderForm';
 	import OrderFormField from './OrderFormField.svelte';
-	import {
-		isFormField,
-		isRadioField,
-		isFreeTextInput
-	} from '../../../types/GenericOrderFormFields';
 
 	export let formType: string;
 	export let form: DefaultOrderForm;
