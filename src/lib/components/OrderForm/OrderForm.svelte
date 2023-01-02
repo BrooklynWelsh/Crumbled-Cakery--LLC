@@ -2,7 +2,6 @@
 	import type { DefaultOrderForm } from '$types/GenericOrderForm';
 	import OrderFormField from './OrderFormField.svelte';
 
-	export let formType: string;
 	export let form: DefaultOrderForm;
 	console.log(form);
 </script>

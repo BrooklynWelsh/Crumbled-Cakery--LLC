@@ -1,0 +1,37 @@
+[
+    {
+        "productName": "Cakes",
+        "imageLoc": "/images/products/Caramel_Wafer_Cake.jpg",
+        "link": "/order/cakes"
+    },
+    {
+        "name": "Cupcakes",
+        "imageLoc": "/images/products/Frog_Cupcakes.jpg",
+        "link": "/order/cupcakes"
+    },
+    {
+        "name": "Cake Pops",
+        "imageLoc": "/images/products/placeholders/cakepop_placeholder.jpg",
+        "link": "/order/cakePops"
+    },
+    {
+        "name": "Mini Cupcakes",
+        "imageLoc": "/images/products/placeholders/mini_cupcake_placeholder.jpg",
+        "link": "/order/mini-cupcakes"
+    },
+    {
+        "name": "Sugar Cookies",
+        "imageLoc": "/images/products/placeholders/sugar_cookie_placeholder.jpg",
+        "link": "/order/sugar-cookies"
+    },
+    {
+        "name": "Special Orders",
+        "imageLoc": "/images/products/placeholders/special_order_placeholder.jpg",
+        "link": "/order/special-orders"
+    },
+    {
+        "name": "Rentals",
+        "imageLoc": "/images/products/placeholders/rentals_placeholder.jpg",
+        "link": "/order/rentals"
+    }
+]
