@@ -14,16 +14,18 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
+      $components: path.resolve('./src/lib/components'),
       $lib: path.resolve('./src/lib'),
       $src: path.resolve('./src/'),
       $static: path.resolve('./static/'),
-      $types: path.resolve('./src/types')
+      $types: path.resolve('./src/types'),
+      '@storyblok/svelte': './node_modules/@storyblok/svelte'
     },
     files: {
       assets: 'static'
     },
     prerender: {
-      entries: ['*', '/order/[slug]']
+      entries: ['*']
     }
   },
   compilerOptions: {}

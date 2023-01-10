@@ -1,19 +1,32 @@
 <svelte:options immutable />
 
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type ProductMetadata from '$types/ProductMetadata';
-	export let products: ProductMetadata[];
+	import ProductCard from './ProductCard.svelte';
+	import { useStoryblokApi } from '@storyblok/svelte';
+	export let blok;
+
+	export let products: ProductMetadata[] = []
+	onMount(async () => {
+		const storyblokApi = useStoryblokApi();
+
+		const { data } = await storyblokApi.get('cdn/stories', {
+			version: 'draft',
+			starts_with: 'order',
+			is_startpage: false
+		});
+		console.log('data inside productlist');
+		console.log(data);
+		console.log(data.stories)
+		products = data.stories;
+	});
 </script>
 
 <div id="product-list">
 	<article class="container">
 		{#each products as product}
-			<article class="thumbnail">
-				<a href={product.link}>
-					<img src={product.imageLoc} alt="egjs" />
-				</a>
-				<h2 class="info">{product.productName}</h2>
-			</article>
+			<ProductCard product={product.content} slug={product.full_slug}/>
 		{/each}
 	</article>
 </div>
@@ -26,15 +39,6 @@
 		padding: 0;
 		height: 100%;
 		background: #fff;
-	}
-
-	a {
-		color: unset;
-		text-decoration: none;
-		height: 83%;
-		display: inline-block;
-		margin: auto;
-		object-fit: cover;
 	}
 
 	.header {
@@ -83,37 +87,6 @@
 	.masonrygrid.horizontal .item {
 		width: auto;
 		height: 250px;
-	}
-
-	/* .thumbnail {
-		height: inherit;
-		max-height: 99%;
-		max-width: 99%;
-	} */
-
-	.thumbnail {
-		overflow: hidden;
-		width: 80%;
-		margin: 10% auto;
-		height: inherit;
-		max-height: 100%;
-		max-width: 100%;
-	}
-
-	a > img {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-		border-radius: 8px;
-	}
-	article > h2 {
-		text-align: center;
-	}
-
-	.item .info {
-		margin-top: 10px;
-		font-weight: bold;
-		color: #777;
 	}
 
 	.item.animate {

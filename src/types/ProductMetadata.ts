@@ -19,8 +19,6 @@ export default class ProductMetadata implements IProductMetadata {
 
   private isValidMetadata (productObject: IProductMetadata | object): productObject is IProductMetadata {
     const cast = productObject as IProductMetadata
-    console.log('cast')
-    console.log(cast)
     return fs.lstatSync((cast).imageLoc).isFile() && Object.prototype.hasOwnProperty.call(cast, 'productName') && Object.prototype.hasOwnProperty.call(cast, 'link')
   }
 }

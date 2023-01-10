@@ -8,7 +8,7 @@
 
 <header>
 	<h3>
-		<a href="/order">ORDER</a>
+		<a>ORDER</a>
 	</h3>
 	<h3>
 		<a>EVENTS</a>

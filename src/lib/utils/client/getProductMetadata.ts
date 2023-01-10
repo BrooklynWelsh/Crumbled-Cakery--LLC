@@ -7,7 +7,6 @@ export default (data: PageData): ProductMetadata[] => {
   try {
     for (const anObject of data.obj) {
       try {
-        console.log(anObject)
         const thing = new ProductMetadata(anObject)
         productsObject.push(thing)
       } catch (e) {
