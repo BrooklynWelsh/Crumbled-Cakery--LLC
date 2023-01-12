@@ -45,7 +45,7 @@
 	"type": "module",
 	"dependencies": {
 		"@splidejs/svelte-splide": "^0.2.9",
-		"@storyblok/svelte": "^2.3.8",
+		"@storyblok/svelte": "^2.4.0",
 		"ts-interface-checker": "^1.0.2",
 		"wrangler": "^2.6.2"
 	}
