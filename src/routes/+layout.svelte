@@ -18,6 +18,7 @@
 	:global(body) {
 		font-family: 'Garet Book', sans-serif;
 		overflow-y: visible;
+		overflow-x: hidden;
 		margin-top: 0;
 	}
 
