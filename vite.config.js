@@ -17,6 +17,9 @@ const config = {
       $types: path.join(__dirname, '/src/types')
     }
   },
+  server: {
+    hmr: false
+  },
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}']
   }

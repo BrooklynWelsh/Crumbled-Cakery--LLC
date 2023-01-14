@@ -10,16 +10,16 @@
 	console.log(blokOptions)
 </script>
 
-<section class="form-info-section" use:storyblokEditable={blok}>
-	<h2>{blok.productName}</h2>
-	<h4>Starting at ${blok.startingPrice}</h4>
-	<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
-</section>
 <section class="form-section" use:storyblokEditable={blok}>
-	<div class="flex-item">
+	<section class="flex-item">
 		<img src={blok.image.filename} />
-	</div>
+	</section>
 	<form>
+		<section class="form-info-section" use:storyblokEditable={blok}>
+			<h2>{blok.productName}</h2>
+			<h4>Starting at ${blok.startingPrice}</h4>
+			<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
+		</section>
 			<OrderFormField fieldData={blokOptions} />
 	</form>
 </section>
@@ -35,25 +35,30 @@
 
 	.form-section {
 		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		align-items: center;
-		gap: 5%;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+		margin-left: 3%;
+		margin-right: 3%;
 	}
 
 	.flex-item {
-		display: flex;
-    width: 44%;
-		margin-left: 2%;
+		flex-basis: auto;
+    align-self: flex-start;
+    margin-top: 8%;
+		max-width: 40%;
 	}
 
 	h4 {
 		flex-basis: 50%;
+		margin-top: 0;
 	}
 	form {
 		flex-grow: 1;
 		flex-shrink: 0;
-		margin-right: 10%;
+		flex-basis: auto;
+		max-width: 60%;
 	}
 
 	img {
@@ -62,5 +67,9 @@
     /* min-width: 20%; */
     object-fit: cover;
     max-width: 100%;
+		border-radius: 3%;
+    -webkit-box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 60%);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 60%);
+    box-shadow: 2px 2px 13px 0px rgb(0 0 0 / 60%);
 	}
 </style>

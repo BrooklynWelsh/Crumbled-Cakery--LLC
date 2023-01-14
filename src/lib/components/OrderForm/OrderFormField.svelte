@@ -7,6 +7,7 @@
 </script>
 
 {#each fieldData as topLevelOption}
+	<section class="form-option">
 	{#if !topLevelOption.options} <!-- Must be a free text option -->
 		<fieldset>
 			<label for="{topLevelOption.component}">{topLevelOption.title}</label>
@@ -17,7 +18,7 @@
 		<legend>{topLevelOption.title}</legend>
 		{#each topLevelOption.options as option}
 			<div class="radio-container">
-				<input type="radio" id={option} name={option} value={option}/>
+				<input type="radio" id={option} name={topLevelOption.component} value={option}/>
 				{#if option !== 'custom'}
 					<label for="{option}">{option}</label>
 				{:else}
@@ -41,6 +42,7 @@
 			<label for={fieldData.id}>{option.name}</label>
 		{/each}
 	{/if} -->
+</section>
 {/each}
 
 <style>
@@ -50,7 +52,7 @@
 	}
 
 	fieldset {
-		border: 5px solid;
+		border: 5px solid rgba(0 0 0 / 50%);
 	}
 
 
