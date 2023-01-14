@@ -1,6 +1,8 @@
 <script lang="ts">
 	import * as GenericFieldTypes from '$types/GenericOrderFormFields';
+	import OrderFieldDropDown from './OrderFieldDropDown.svelte';
 	export let fieldData: GenericFieldTypes.ValidFormField;
+	let selected;
 
 	console.log('Field Data')
 	console.log(fieldData)
@@ -15,18 +17,8 @@
 		</fieldset>
 	{:else if topLevelOption.options} <!-- Must be a multiple choice option -->
 		<fieldset>
-		<legend>{topLevelOption.title}</legend>
-		{#each topLevelOption.options as option}
-			<div class="radio-container">
-				<input type="radio" id={option} name={topLevelOption.component} value={option}/>
-				{#if option !== 'custom'}
-					<label for="{option}">{option}</label>
-				{:else}
-					<label for="{option}">{option}</label>
-					<input type="text" id="customValue" name="custom"/>
-				{/if}
-			</div>
-		{/each}
+			<label for={topLevelOption.component}>{topLevelOption.title}:</label>
+			<OrderFieldDropDown topLevelOption={topLevelOption}/>
 	</fieldset>
 	{/if}
 
@@ -50,6 +42,12 @@
 	div {
 		margin-bottom: 10px;
 	}
+
+	label {
+    display: block;
+		max-width: 100%;
+		width: auto;
+  }
 
 	fieldset {
 		border: 5px solid rgba(0 0 0 / 50%);
