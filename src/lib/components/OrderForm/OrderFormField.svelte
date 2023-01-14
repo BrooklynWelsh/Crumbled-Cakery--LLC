@@ -13,7 +13,7 @@
 	{#if !topLevelOption.options} <!-- Must be a free text option -->
 		<fieldset>
 			<label for="{topLevelOption.component}">{topLevelOption.title}</label>
-			<textarea id={topLevelOption.component} name={topLevelOption.component} rows="5"/>
+			<textarea id={topLevelOption.component} name={topLevelOption.component} rows="3" cols="33"/>
 		</fieldset>
 	{:else if topLevelOption.options} <!-- Must be a multiple choice option -->
 		<fieldset>
@@ -21,19 +21,6 @@
 			<OrderFieldDropDown topLevelOption={topLevelOption}/>
 	</fieldset>
 	{/if}
-
-
-
-	<!-- <legend>{fieldData.title}</legend>
-	{#if GenericFieldTypes.isFreeTextInput(fieldData)}
-		<p>{fieldData.description}</p>
-		<textarea form="order-form" id={fieldData.id} name={fieldData.title} />
-	{:else if GenericFieldTypes.isRadioField(fieldData)}
-		{#each fieldData.options as option}
-			<input id={fieldData.id} type="radio" name={fieldData.title} value={option.name} />
-			<label for={fieldData.id}>{option.name}</label>
-		{/each}
-	{/if} -->
 </section>
 {/each}
 
@@ -53,6 +40,10 @@
 		border: 5px solid rgba(0 0 0 / 50%);
 	}
 
-
+	textarea {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: auto;
+  }
 
 </style>

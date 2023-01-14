@@ -102,15 +102,14 @@
 		border-image-width: 100% 0% 0% 0%;
 	}
 
-	header > a {
+	header > h3 > a {
 		margin-right: auto;
 		margin-left: auto;
 		margin-top: auto;
 		margin-bottom: auto;
+		font-weight: normal;
 		color: #cbae9d;
-		font-weight: bolder;
-		font-size: 1.8em;
-		text-shadow: 3px 2px 1px;
+		text-shadow: 1px 1px 4px;
 	}
 
 	#header-logo {
@@ -130,7 +129,6 @@
 	}
 
 	h3 {
-		font-size: var(--step-2);
 		flex: 1;
 		text-align: center;
 	}

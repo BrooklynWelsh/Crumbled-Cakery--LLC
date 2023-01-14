@@ -9,14 +9,21 @@
 	/* Header/Nav styles go here */
 	@font-face {
 		font-family: 'Garet Book';
-		src: local('Garet Book'), local('Garet-Book'), local('garet book'), local('garet-book'),
-			url('static/fonts/garet-book.ttf'), format('truetype');
+		src:url('/fonts/garet-book.ttf') format('truetype'),
+				url('/fonts/garet-book.ttf') format('woff'),
+				url('/fonts/garet-book.ttf') format('woff2'),
+				url('/fonts/garet-book.ttf') format('svg'),
+				url('/fonts/garet-book.ttf') format('embedded-opentype');
 		font-weight: normal;
 		font-display: swap;
 	}
 
+	:global(*) {
+		font-family: 'Garet Book';
+	}
+
 	:global(body) {
-		font-family: 'Garet Book', sans-serif;
+		font-family: 'Garet Book';
 		overflow-y: visible;
 		overflow-x: hidden;
 		margin-top: 0;
