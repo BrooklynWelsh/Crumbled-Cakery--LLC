@@ -26,7 +26,7 @@
 		font-family: 'Garet Book';
 		overflow-y: visible;
 		overflow-x: hidden;
-		margin-top: 0;
+		margin: 0;
 	}
 
 	:global(.body-container) {

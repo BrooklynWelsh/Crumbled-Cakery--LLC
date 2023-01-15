@@ -47,5 +47,7 @@
 		width: 100%;
 		min-width: 100px;
 		flex: 2;
+		object-fit: cover;
+		margin-top: 2%;
 	}
 </style>

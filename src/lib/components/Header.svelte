@@ -95,7 +95,7 @@
 		margin: 0 auto;
 		background-image: url('/images/site_template/blurred_header.svg');
 		background-size: cover;
-		border-width: 20px 0 20px 0;
+		border-width: 0px 0 50px 0;
 		border-style: solid;
 		border-image-source: url('/images/site_template/header_border.svg');
 		border-image-slice: 38% 0% 0% 7%;
