@@ -5,7 +5,7 @@
 	console.log('blok')
 	console.log(blok)
 	const blokOptions = blok.options
-
+	const countOptionsAndPricing = blok.countOptionsAndPricing
 	console.log('blokOptions')
 	console.log(blokOptions)
 </script>
@@ -14,20 +14,22 @@
 	<section class="flex-item">
 		<img src={blok.image.filename} />
 	</section>
-	<form>
+	<form id="order-form" method="POST">
 		<section class="form-info-section" use:storyblokEditable={blok}>
 			<h2>{blok.productName}</h2>
 			<h4>Starting at ${blok.startingPrice}</h4>
 			<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
 		</section>
-			<OrderFormField fieldData={blokOptions} />
+			<OrderFormField fieldData={blokOptions} countOptionsAndPricing={countOptionsAndPricing}/>
+		<section class='add-to-cart-section'>
+			<button type="submit" id='submit-button'>Add to Cart</button>
+		</section>
 	</form>
 </section>
 
-
 <style>
 
-	.form-info-section {
+	form > section {
 		display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,6 +43,14 @@
     gap: 5%;
 		margin-left: 3%;
 		margin-right: 3%;
+	}
+
+	.add-to-cart-section {
+		margin-top: 5%;
+	}
+
+	button {
+		border-radius: 13px;
 	}
 
 	.flex-item {
@@ -72,4 +82,9 @@
     -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 60%);
     box-shadow: 2px 2px 13px 0px rgb(0 0 0 / 60%);
 	}
+
+	#submit-button {
+
+	}
+
 </style>
