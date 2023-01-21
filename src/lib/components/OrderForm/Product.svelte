@@ -1,31 +1,39 @@
 <script lang="ts">
 	import { storyblokEditable } from '@storyblok/svelte';
+	import VisualBuilder from './cakes/VisualBuilder.svelte';
 	import OrderFormField from './OrderFormField.svelte';
 	export let blok;
+	export let slug: string;
 	console.log('blok')
 	console.log(blok)
+	console.log('slug')
+	console.log(slug)
 	const blokOptions = blok.options
 	const countOptionsAndPricing = blok.countOptionsAndPricing
 	console.log('blokOptions')
 	console.log(blokOptions)
 </script>
 
-<section class="form-section" use:storyblokEditable={blok}>
-	<section class="flex-item">
-		<img src={blok.image.filename} />
+{#if slug && slug === 'order/cakes'}
+	<VisualBuilder options={blok}/>
+{:else}
+	<section class="form-section" use:storyblokEditable={blok}>
+		<section class="flex-item">
+			<img src={blok.image.filename} />
+		</section>
+		<form id="order-form" method="POST">
+			<section class="form-info-section" use:storyblokEditable={blok}>
+				<h2>{blok.productName}</h2>
+				<h4>Starting at ${blok.startingPrice}</h4>
+				<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
+			</section>
+				<OrderFormField fieldData={blokOptions} countOptionsAndPricing={countOptionsAndPricing}/>
+			<section class='add-to-cart-section'>
+				<button type="submit" id='submit-button'>Add to Cart</button>
+			</section>
+		</form>
 	</section>
-	<form id="order-form" method="POST">
-		<section class="form-info-section" use:storyblokEditable={blok}>
-			<h2>{blok.productName}</h2>
-			<h4>Starting at ${blok.startingPrice}</h4>
-			<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
-		</section>
-			<OrderFormField fieldData={blokOptions} countOptionsAndPricing={countOptionsAndPricing}/>
-		<section class='add-to-cart-section'>
-			<button type="submit" id='submit-button'>Add to Cart</button>
-		</section>
-	</form>
-</section>
+{/if}
 
 <style>
 

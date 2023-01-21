@@ -7,7 +7,7 @@ export async function load ({ params, parent }): PageLoad {
   const { storyblokApi } = await parent()
   const slug: string | undefined = params.slug
   let path = 'cdn/stories/'
-  if (slug) {
+  if (slug !== null && slug !== undefined) {
     path += slug
   } else {
     path += 'home'
@@ -16,7 +16,14 @@ export async function load ({ params, parent }): PageLoad {
     version: 'draft'
   })
 
-  return {
-    story: dataStory.data.story
+  if (slug !== null && slug !== undefined) {
+    return {
+      slug,
+      story: dataStory.data.story
+    }
+  } else {
+    return {
+      story: dataStory.data.story
+    }
   }
 }

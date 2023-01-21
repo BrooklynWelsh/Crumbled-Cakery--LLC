@@ -13,7 +13,7 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"watch": "node --experimental-vm-modules bin/watch.js",
-		"interface-gen": "ts-interface-builder types/*.ts"
+		"interface-gen": "ts-interface-builder src/types/*.ts"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",

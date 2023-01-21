@@ -16,7 +16,11 @@
 {#key data}
 	<div>
 		{#if data.story}
-			<StoryblokComponent blok={data.story.content} />
+			{#if data.slug}
+				<StoryblokComponent slug={data.slug} blok={data.story.content} />
+			{:else}
+				<StoryblokComponent blok={data.story.content} />
+			{/if}
 		{/if}
 	</div>
 {/key}

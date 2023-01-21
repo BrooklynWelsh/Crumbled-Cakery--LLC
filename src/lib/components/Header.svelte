@@ -13,7 +13,9 @@
 	<h3>
 		<a>EVENTS</a>
 	</h3>
-	<svelte:component this={Logo} />
+	<a>
+		<svelte:component this={Logo} />
+	</a>
 	<h3>
 		<a>CONTACT</a>
 	</h3>
@@ -23,6 +25,16 @@
 </header>
 
 <style>
+
+header > a {
+		height: 100%;
+		width: 100%;
+		min-width: 100px;
+		flex: 2;
+		object-fit: cover;
+		margin-top: 1%;
+	}
+
 	/* media query for 600 px wide  */
 	:global(:root) {
 		--fluid-min-width: 320;

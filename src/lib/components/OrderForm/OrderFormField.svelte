@@ -3,7 +3,6 @@
 	import OrderFieldDropDown from './OrderFieldDropDown.svelte';
 	export let fieldData: GenericFieldTypes.ValidFormField;
 	export let countOptionsAndPricing;
-	let selected;
 
 	console.log('Field Data')
 	console.log(fieldData)
