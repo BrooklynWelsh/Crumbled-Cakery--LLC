@@ -19,7 +19,7 @@ export const LayerUpdate = t.iface([], {
 });
 
 export const FlavorUpdate = t.iface([], {
-  "field": t.lit('flavor'),
+  "field": t.union(t.lit('flavors'), t.lit('flavor')),
   "value": "FlavorType",
   "tierIndex": "number",
 });

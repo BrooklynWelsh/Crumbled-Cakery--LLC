@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let topLevelOption;
-  export let countOptionsAndPricing;
+  export let topLevelOption: Object | null | undefined;
+  export let countOptionsAndPricing: Object | null | undefined;
 
   let selected: string;
 
@@ -8,7 +8,7 @@
   import { CakeUpdate, type TierCountUpdate } from '$types/ICakeUpdate';
   import type { TierUpdate } from '$types/ICakeUpdate';
 
-  const tierOptions = ['tiers', 'layers', 'Flavors Offerings', 'Diameter']
+  const tierOptions = ['tiers', 'layers', 'flavors', 'diameter']
 
 	const dispatch = createEventDispatcher();
 
@@ -17,15 +17,15 @@
     const target = (event.target as HTMLSelectElement)
     console.log(event.target)
     if (target && target.parentElement) {
-      if (!(target.id in tierOptions)) {
+      if (!(tierOptions.includes(target.id))) {
         const freeInput: HTMLTextAreaElement = (target.parentElement.querySelector('textarea') as HTMLTextAreaElement)
         freeInput.required = true;
         freeInput.style.display = 'block';
       }
 
-      if (target.parentElement.component !== undefined && target.parentElement.component !== null) {
+      if (target.parentElement.dataset.component !== undefined && target.parentElement.dataset.component !== null) {
         dispatch('update', new CakeUpdate({
-          update: { field: target.name, value: parseInt(selected), tierIndex: parseInt(target.getAttribute('for')?.split('-')[1])} as TierUpdate
+          update: { field: target.name, value: selected, tierIndex: parseInt(target?.parentElement.dataset?.component.split('-')[1]) - 1} as TierUpdate
         }))
       } else {
         dispatch('update', new CakeUpdate({
@@ -39,7 +39,7 @@
 
   {#if topLevelOption}
     <select bind:value={selected} on:change="{(event) => selectChange(event)}" required id={topLevelOption.component} name={topLevelOption.component} form="order-form">
-      {#if topLevelOption.component !== 'tiers'}
+      {#if !(topLevelOption.component in tierOptions)}
         <option selected value="">--Please choose an option--</option>
       {/if}
     {#each topLevelOption.options as option}
@@ -72,8 +72,8 @@
 
 <style>
   select {
-    min-width: 40%;
-    width: 40%;
+    min-width: 80%;
+    max-width: 100%;
   }
 
   select:focus {

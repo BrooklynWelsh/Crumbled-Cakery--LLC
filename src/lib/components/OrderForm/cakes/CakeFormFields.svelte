@@ -16,15 +16,6 @@
 	</fieldset>
 </section>
 
-{#each perTierOptions as tierOption}
-		{#each cake.getTiers() as tier (tier.id)}
-			<fieldset data-component={tierOption.component}>
-				<label for="{'tier-' + tier.id + '-' + tierOption.component}">{'Tier ' + tier.id + ': ' + tierOption.title}</label>
-				<CakeFormDropdown on:update topLevelOption={tierOption}/>
-			</fieldset>
-		{/each}
-{/each}
-
 {#each options as topLevelOption}
 	<section class="form-option">
 	{#if !topLevelOption.options} <!-- Must be a free text option -->
@@ -57,7 +48,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		border: none;
 		margin-top: 1%;
     min-height: 0;
 	}
@@ -70,6 +60,7 @@
 	.form-option {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 	}
 
 </style>

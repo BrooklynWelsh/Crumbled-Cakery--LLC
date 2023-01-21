@@ -15,7 +15,7 @@ interface LayerUpdate {
 }
 
 interface FlavorUpdate {
-  field: 'flavor'
+  field: 'flavors' | 'flavor'
   value: FlavorType
   tierIndex: number
 }
@@ -42,6 +42,9 @@ export class CakeUpdate implements ICakeUpdate {
   update: TierUpdate | TierCountUpdate
 
   constructor (updateObject: ICakeUpdate) {
+    if (updateObject.update.field !== 'flavor' && updateObject.update.field !== 'flavors') {
+      updateObject.update.value = parseInt(updateObject.update.value)
+    }
     if (checkers.ICakeUpdate.test(updateObject)) {
       this.update = updateObject.update
     } else {

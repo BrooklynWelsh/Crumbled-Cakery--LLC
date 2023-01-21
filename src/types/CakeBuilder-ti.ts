@@ -4,11 +4,8 @@
 import * as t from "ts-interface-checker";
 // tslint:disable:object-literal-key-quotes
 
-export const ICakeBuilder = t.iface([], {
-  "tiers": t.array("Tier"),
-});
+
 
 const exportedTypeSuite: t.ITypeSuite = {
-  ICakeBuilder,
 };
 export default exportedTypeSuite;
