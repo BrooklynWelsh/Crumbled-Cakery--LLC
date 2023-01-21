@@ -1,7 +1,11 @@
 <script>
-	import { onMount } from 'svelte';
+	import VisualBuilder from '$components/OrderForm/cakes/VisualBuilder.svelte';
+import { onMount } from 'svelte';
 	import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte';
 	export let data;
+
+	console.log('DATA')
+	console.log(data)
 	onMount(() => {
 		if (data.story) {
 			console.log(data.story);
@@ -17,6 +21,9 @@
 	<div>
 		{#if data.story}
 			{#if data.slug}
+				<!-- {#if data.slug === 'order/cakes'}
+					<VisualBuilder blok={data.story}/>
+				{/if} -->
 				<StoryblokComponent slug={data.slug} blok={data.story.content} />
 			{:else}
 				<StoryblokComponent blok={data.story.content} />

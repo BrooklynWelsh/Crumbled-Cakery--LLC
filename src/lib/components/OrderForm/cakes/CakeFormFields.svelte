@@ -6,7 +6,8 @@
 	export let cake: CakeBuilder;
 
 	const tierOptions = ['layers', 'Flavors Offerings', 'Diameter']
-
+	console.log('OPTIONS')
+	console.log(options)
 </script>
 
 <section class="form-option">
@@ -54,7 +55,7 @@
 
 	textarea {
     margin-top: 1%;
-    width: auto;
+    width: 100%;
   }
 
 	.form-option {

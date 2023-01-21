@@ -1,4 +1,4 @@
-import ProductMetadata from '$types/ProductMetaData'
+import ProductMetadata from '$types/ProductMetadata'
 import type { PageData } from '$types'
 import { error } from '@sveltejs/kit'
 

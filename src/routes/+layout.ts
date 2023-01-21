@@ -37,6 +37,8 @@ export const load = (async () => {
       products: dataProductOrderForm.data.story
     }
   } catch (e) {
+    console.log('layout.ts')
     console.error(e)
+    return null
   }
 }) satisfies LayoutLoad

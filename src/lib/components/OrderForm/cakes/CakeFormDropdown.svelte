@@ -39,7 +39,7 @@
 
   {#if topLevelOption}
     <select bind:value={selected} on:change="{(event) => selectChange(event)}" required id={topLevelOption.component} name={topLevelOption.component} form="order-form">
-      {#if !(topLevelOption.component in tierOptions)}
+      {#if !(tierOptions.includes(topLevelOption.component))}
         <option selected value="">--Please choose an option--</option>
       {/if}
     {#each topLevelOption.options as option}
@@ -83,6 +83,6 @@
 
   textarea {
     margin-top: 1%;
-    width: auto;
+    width: 100%;
   }
 </style>

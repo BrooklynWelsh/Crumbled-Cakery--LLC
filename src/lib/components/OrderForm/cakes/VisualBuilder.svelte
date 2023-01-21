@@ -17,7 +17,6 @@
     cake.update(updateObject)
     cake = cake
   }
-
 </script>
 
 <article id="body">
@@ -109,6 +108,12 @@
     flex-basis: 25%;
   }
 
+  @media (max-width: 1366px) {
+    #cake-form {
+      width: 30%;
+    }
+  }
+
   #tier-options {
     flex-basis: 15%;
   }
@@ -137,6 +142,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 4%;
     width: 100%;
   }
