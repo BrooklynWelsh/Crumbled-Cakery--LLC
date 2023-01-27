@@ -2,13 +2,16 @@ import type { TierUpdate, TierTypes, LayerType, DiameterType, FlavorType } from 
 
 export default class Tier {
   id: number
-  layers: LayerType
+  layers: Array<{ layerIndex: number }>
   diameter: DiameterType
   flavor: FlavorType
 
   constructor (id: number, layers: LayerType = 1, diameter: DiameterType = 10, flavor: FlavorType = 'vanilla') {
     this.id = id
-    this.layers = layers
+    this.layers = []
+    for (let i = 1; i <= layers; i++) {
+      this.layers.push({ layerIndex: i })
+    }
     this.diameter = diameter
     this.flavor = flavor
   }
@@ -18,6 +21,25 @@ export default class Tier {
   }
 
   set (update: TierUpdate): void {
-    this[update.field] = update.value
+    console.log('setting via update')
+    console.log(update)
+    if (update.field === 'layers') {
+      while (this.layers.length !== update.value) {
+        if (this.layers.length < update.value) {
+          this.layers.push({ layerIndex: this.layers.length + 1 })
+        } else if (this.layers.length > update.value) {
+          this.layers.pop()
+        }
+      }
+      console.log('new layers')
+      console.log(this.layers)
+    } else {
+      console.log('else')
+      this[update.field] = update.value
+    }
+  }
+
+  getCirumference (): number {
+    return this.diameter * 3.14
   }
 }

@@ -49,12 +49,8 @@ export default class CakeBuilder {
     while (this.#tiers.length !== update.value) {
       if (this.#tiers.length > update.value) {
         this.pop()
-        // this.#removeTierElement()
       } else if (this.#tiers.length < update.value) {
         this.#tiers.push(new Tier(this.#tiers.length + 1, 1, this.getLastTier()?.diameter, this.getLastTier()?.flavor))
-        if (document !== undefined && window !== undefined) {
-          // document.getElementById('cake-builder')?.prepend(this.#createTierElement())
-        }
       }
     }
   }
