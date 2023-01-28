@@ -34,15 +34,7 @@
             <h4>Starting at ${blok.startingPrice}</h4>
             <h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
           </section> -->
-				<CakeFormFields
-					on:update={(update) => {
-						{
-							handleTierCountUpdate(update.detail);
-						}
-					}}
-					options={blok.options}
-					{cake}
-				/>
+				<CakeFormFields on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} options={blok.options} {cake} />
 				<section class="add-to-cart-section">
 					<button type="submit" id="submit-button">Add to Cart</button>
 				</section>
@@ -56,7 +48,7 @@
 					{#each blok.perTierOptions as tierOption}
 						<fieldset data-component={'tier-' + tier.id + '-' + tierOption.component}>
 							<label for={'tier-' + tier.id + '-' + tierOption.component}>{tierOption.title}</label>
-							<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} />
+							<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} {tier} />
 						</fieldset>
 					{/each}
 				</fieldset>
@@ -140,7 +132,7 @@
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: center;
-		gap: 4%;
+		gap: 2%;
 	}
 
 	#order-form {
