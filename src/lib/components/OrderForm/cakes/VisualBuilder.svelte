@@ -69,12 +69,17 @@
 						<figcaption style="grid-area: 1/1/{tier.get('layers').length + 1}/1;">
 							Tier {tier.id}
 						</figcaption>
+            <div>
+              {#each tier.layers as layer, index (layer.layerIndex)}
+              <div class='tier-bracket'></div>
+              {/each}
+            </div>
 						{#each tier.layers as layer, index (layer.layerIndex)}
 							<div transition:fly|local={{ y: -200 }} animate:flip="{{ easing: expoOut }}" class="row"
 								style="height: {cake.getHeight()}px; width: {50 * (tier.diameter / 10)}%;
                 grid-row-start: {tier.layers.length - index}; 
                 grid-row-end: {tier.layers.length - index};
-                grid-column: 2 / 2;">
+                grid-column: 3 / 3;">
 								<div class="tier" style="height: {cake.getHeight()}px;" />
 							</div>
 						{/each}
@@ -100,10 +105,6 @@
 
 	#body {
 		height: 77vh;
-	}
-
-	figcaption {
-		width: 5%;
 	}
 
 	#form-container {
@@ -152,27 +153,42 @@
 	}
 
 	.row {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		gap: 4%;
+    padding: 0.2%;
 	}
 
 	.tier-container {
 		display: grid;
-		grid-template-columns: auto 87%;
+		grid-template-columns: auto 0.2% 87%;
 		justify-content: center;
-		gap: 1%;
 		width: 100%;
 	}
 
+  .tier-bracket {
+    grid-column: 2 / 2;
+    border-left: solid black 2px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .tier-bracket:first-of-type {
+    border-top: solid black 2px;
+  }
+
+  .tier-bracket:last-of-type {
+    border-bottom: solid black 2px;
+  }
+
+  .tier-bracket:only-of-type{
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+  }
+
 	figcaption {
-		margin-right: auto;
+		margin-right: 50%;
 		grid-area: 1/1/1/1;
 		text-align: center;
 		place-self: center;
+    width: 100%;
 	}
 
 	.column {
