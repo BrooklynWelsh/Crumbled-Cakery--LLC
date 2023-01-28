@@ -8,6 +8,7 @@
 	import { fly } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
   import { expoOut } from 'svelte/easing';
+	import TierOption from './TierOption.svelte';
 
 	export let blok: Object;
 	const thickness = 10;
@@ -55,7 +56,7 @@
 					{#each blok.perTierOptions as tierOption}
 						<fieldset data-component={'tier-' + tier.id + '-' + tierOption.component}>
 							<label for={'tier-' + tier.id + '-' + tierOption.component}>{tierOption.title}</label>
-							<CakeFormDropdown on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} topLevelOption={tierOption} />
+							<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} />
 						</fieldset>
 					{/each}
 				</fieldset>
