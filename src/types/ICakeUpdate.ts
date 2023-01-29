@@ -1,6 +1,6 @@
 import { createCheckers } from 'ts-interface-checker'
 import type { CheckerT } from 'ts-interface-checker'
-import ICakeUpdateTI from './ICakeUpdate-ti'
+import ICakeUpdateTI, { TierTypes } from './ICakeUpdate-ti'
 const checkers = createCheckers(ICakeUpdateTI) as { ICakeUpdate: CheckerT<CakeUpdate> }
 
 export type LayerType = 1 | 2 | 3 | 4

@@ -39,7 +39,7 @@ export default class Tier {
     }
   }
 
-  getCirumference (): number {
+  getCircumference (): number {
     return this.diameter * 3.14
   }
 }

@@ -21,6 +21,11 @@
 		// Update grid area for figcaption so that row end is one more than the # of layers (i.e. 2 layers, grid-area = 1/1/3/1)
 		cake = cake;
 	};
+
+  function toString(title: any): string {
+    if(title === 'Diameter') return title.toString() + ' (inches)'
+    else return title.toString()
+  }
 </script>
 
 <article id="body">
@@ -47,7 +52,7 @@
 					<legend>Tier {tier.id} Options: </legend>
 					{#each blok.perTierOptions as tierOption}
 						<fieldset data-component={'tier-' + tier.id + '-' + tierOption.component}>
-							<label for={'tier-' + tier.id + '-' + tierOption.component}>{tierOption.title}</label>
+							<label for={'tier-' + tier.id + '-' + tierOption.component}>{toString(tierOption.title)}</label>
 							<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} {tier} />
 						</fieldset>
 					{/each}
