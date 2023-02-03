@@ -74,7 +74,7 @@
             </div>
 						{#each tier.layers as layer, index (layer.layerIndex)}
 							<div transition:fly|local={{ y: -200 }} animate:flip="{{ easing: expoOut }}" class="row"
-								style="height: {cake.getHeight()}px; width: {50 * (tier.diameter / 10)}%;
+								style="height: {cake.getHeight()}px; width: {100 * (tier.diameter / 10)}%;
                 grid-row-start: {tier.layers.length - index}; 
                 grid-row-end: {tier.layers.length - index};
                 grid-column: 3 / 3;">
@@ -137,7 +137,7 @@
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: center;
-		gap: 2%;
+		gap: 1%;
 	}
 
 	#order-form {
@@ -156,8 +156,9 @@
 
 	.tier-container {
 		display: grid;
-		grid-template-columns: auto 0.2% 87%;
+		grid-template-columns: auto 2.2% 54%;
 		justify-content: center;
+    justify-items: center;
 		width: 100%;
 	}
 
@@ -196,7 +197,7 @@
 		gap: 1%;
 	}
 
-	/* #cake-visual {
-    height: 70%;
-  } */
+	.add-to-cart-section {
+	margin: 2% auto;
+  }
 </style>

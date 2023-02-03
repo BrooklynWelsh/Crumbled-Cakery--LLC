@@ -22,13 +22,6 @@
 
 <section class="form-option">
 	<fieldset>
-		<label for="tiers">Tiers:</label>
-		<CakeFormDropdown tiers={cake.getTiers()}/>
-	</fieldset>
-</section>
-
-<section class="form-option">
-	<fieldset>
 		<label for="style">Style</label>
 		<select  on:change="{(event) => selectChange(event)}" required id="style" name="style" form="order-form">
 			<option selected value="">--Please choose an option--</option>
@@ -64,6 +57,33 @@
 	</section>
 {/each}
 
+<section class="form-option">
+	<fieldset>
+		<label for="gift-wrap">Gift wrapping?</label>
+		<input type="checkbox" id="gift-wrap" name="gift-wrap" />
+	</fieldset>
+</section>
+
+<section class="form-option">
+	<fieldset>
+		<legend>Pickup or delivery? (Cakes over 2 tiers require delivery)</legend>
+
+		{#if cake.getTiers().length > 2}
+			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" disabled/>
+		{:else}
+			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" />
+		{/if}
+		<label for="pickup">Pickup</label>
+
+		{#if cake.getTiers().length > 2}
+			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" checked/>
+		{:else}
+			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" />
+		{/if}
+		<label for="delivery">Delivery</label>
+	</fieldset>
+</section>
+
 <style>
 
 	div {
@@ -71,17 +91,15 @@
 	}
 
 	label {
-    display: block;
 		max-width: 100%;
 		width: auto;
-  }
+  	}
 
 	fieldset {
-		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		margin-top: 1%;
-    min-height: 0;
+    	min-height: 0;
 	}
 
 	textarea {
@@ -109,4 +127,5 @@
     margin-top: 1%;
     width: 100%;
   }
+
 </style>
