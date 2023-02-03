@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CakeFormFields from './../cakes/CakeFormFields.svelte';
-	import CakeFormDropdown from './CakeFormDropdown.svelte';
 	import { storyblokEditable } from '@storyblok/svelte';
 	import type { CakeUpdate } from '$types/ICakeUpdate';
 	import CakeBuilder from '$types/CakeBuilder';
@@ -11,10 +10,11 @@
 	import TierOption from './TierOption.svelte';
 
 	export let blok: Object;
+  console.log('BLOK')
+  console.log(blok)
 	const thickness = 10;
 	const baseHeight = 10;
 	let cake: CakeBuilder = new CakeBuilder([new Tier(1)], 100);
-	console.log(cake);
 
 	const handleTierCountUpdate = (updateObject: CakeUpdate) => {
 		cake.update(updateObject);
@@ -39,7 +39,7 @@
             <h4>Starting at ${blok.startingPrice}</h4>
             <h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
           </section> -->
-				<CakeFormFields on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} options={blok.options} {cake} />
+				<CakeFormFields on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} options={blok.options} styles={blok.styleOptions} {cake} />
 				<section class="add-to-cart-section">
 					<button type="submit" id="submit-button">Add to Cart</button>
 				</section>
