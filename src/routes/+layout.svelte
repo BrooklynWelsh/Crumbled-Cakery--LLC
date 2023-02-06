@@ -36,8 +36,6 @@
 	:global(button, label, select, textarea) {
 		font-family: inherit;
 		font-size: 100%;
-
-		width: 150px;
 		padding: 0;
 		margin: 0;
 		box-sizing: border-box;

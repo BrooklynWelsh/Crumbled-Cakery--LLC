@@ -10,8 +10,22 @@
 	console.log(slug)
 	const blokOptions = blok.options
 	const countOptionsAndPricing = blok.countOptionsAndPricing
-	console.log('blokOptions')
-	console.log(blokOptions)
+	const setOptions = blok.setOptions
+	const sizeOptions = blok.sizeOptions
+
+	const ordering = {}, // map for efficient lookup of sortIndex
+    sortOrder = ['countOptionsAndPricing', 'setOptions', 'sizeOptions', 'styleOptions', 'options'];
+	for (let i=0; i<sortOrder.length; i++) {
+		ordering[sortOrder[i]] = i;
+	}
+
+	const allOptions = Object.entries(blok)
+						.filter((optionArr) => optionArr[0] !== "image" && Array.isArray(optionArr[1]) && optionArr[1].length > 0)
+						.sort((a,b) => {
+							return (ordering[a[0]] - ordering[b[0]]) || a[0].localeCompare(b[0])
+						})
+	console.log('all Options')
+	console.log(allOptions)
 </script>
 
 {#if slug && slug === 'order/cakes'}
@@ -20,6 +34,11 @@
 	<section class="form-section" use:storyblokEditable={blok}>
 		<section class="flex-item">
 			<img src={blok.image.filename} />
+			{#if blok.image.filename.includes('placeholder')}
+				<hr>
+				<strong>WARNING: THIS IMAGE IS A PLACEHOLDER</strong><br>
+				<strong>NOT FOR PUBLIC USE, CHANGE BEFORE GOING PUBLIC!!</strong>
+			{/if}
 		</section>
 		<form id="order-form" method="POST">
 			<section class="form-info-section" use:storyblokEditable={blok}>
@@ -27,7 +46,13 @@
 				<h4>Starting at ${blok.startingPrice}</h4>
 				<h4>Fill out this form to receive an estimate for your order within 24 hours.</h4>
 			</section>
-				<OrderFormField fieldData={blokOptions} countOptionsAndPricing={countOptionsAndPricing}/>
+			<OrderFormField fieldData={blokOptions} {allOptions} {countOptionsAndPricing} {setOptions} {sizeOptions}/>
+			<section class="form-option gift-option">
+				<fieldset>
+					<label for="gift-wrap">Gift wrapping?</label>
+					<input type="checkbox" id="gift-wrap" name="gift-wrap" />
+				</fieldset>
+			</section>
 			<section class='add-to-cart-section'>
 				<button type="submit" id='submit-button'>Add to Cart</button>
 			</section>
@@ -51,6 +76,15 @@
     gap: 5%;
 		margin-left: 3%;
 		margin-right: 3%;
+	}
+
+	:global(.form-option) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.gift-option {
+		align-items: flex-start;
 	}
 
 	.add-to-cart-section {

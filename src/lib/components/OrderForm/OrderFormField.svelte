@@ -3,32 +3,52 @@
 	import OrderFieldDropDown from './OrderFieldDropDown.svelte';
 	export let fieldData: GenericFieldTypes.ValidFormField;
 	export let countOptionsAndPricing;
+	export let setOptions;
+	export let sizeOptions;
+	export let allOptions; 
 
-	console.log('Field Data')
-	console.log(fieldData)
+	console.log('alloptions')
+	console.log(allOptions)
+	
 </script>
 
-<section class="form-option">
+<!-- <section class="form-option">
 	<fieldset>
-		<label for="count">Count:</label>
-		<OrderFieldDropDown countOptionsAndPricing={countOptionsAndPricing}/>
+		<OrderFieldDropDown {countOptionsAndPricing} {setOptions} {sizeOptions}/>
 	</fieldset>
-</section>
+</section> -->
 
-{#each fieldData as topLevelOption}
+{#each allOptions as [optionTitle, optionArray]}
+	{#if optionTitle === 'sizeOptions'}
+		<section class="form-option">
+			<OrderFieldDropDown sizeOptions={optionArray} />
+		</section>
+	{:else if optionTitle === 'styleOptions'}
 	<section class="form-option">
-	{#if !topLevelOption.options} <!-- Must be a free text option -->
-		<fieldset>
-			<label for="{topLevelOption.component}">{topLevelOption.title}</label>
-			<textarea id={topLevelOption.component} name={topLevelOption.component} rows="3" cols="33"/>
-		</fieldset>
-	{:else if topLevelOption.options} <!-- Must be a multiple choice option -->
-		<fieldset>
-			<label for={topLevelOption.component}>{topLevelOption.title}:</label>
-			<OrderFieldDropDown topLevelOption={topLevelOption}/>
-	</fieldset>
+		<label for="{optionArray[0].component}">Style:</label>
+		<OrderFieldDropDown topLevelOption={optionArray} />
+	</section>
+	{:else if optionTitle === 'countOptionsAndPricing'}
+	<section class="form-option">
+		<OrderFieldDropDown countOptionsAndPricing={optionArray} />
+	</section>
+	{:else}
+		{#each optionArray as topLevelOption}
+			<section class="form-option">
+			{#if topLevelOption.title && Object.keys(topLevelOption).length <= 4} <!-- Must be a free text option -->
+				<fieldset>
+					<label for="{topLevelOption.component}">{topLevelOption.title}</label>
+					<textarea id={topLevelOption.component} name={topLevelOption.component} rows="3" cols="33"/>
+				</fieldset>
+			{:else if topLevelOption.options} <!-- Must be a multiple choice option -->
+				<fieldset>
+					<label for={topLevelOption.component}>{topLevelOption.title}:</label>
+					<OrderFieldDropDown {topLevelOption}/>
+				</fieldset>
+			{/if}
+			</section>
+		{/each}
 	{/if}
-</section>
 {/each}
 
 <style>
