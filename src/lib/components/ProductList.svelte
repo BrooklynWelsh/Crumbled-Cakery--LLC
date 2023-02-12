@@ -31,7 +31,8 @@
 	</article>
 </div>
 
-<style>
+<style lang="postcss">
+
 	html,
 	body {
 		position: relative;
@@ -78,8 +79,7 @@
 		grid-auto-rows: minmax(16%, 1fr);
 		margin: auto;
 		align-items: stretch;
-		row-gap: 5%;
-		column-gap: 7%
+		column-gap: rfs(13rem);
 	}
 
 	.item {

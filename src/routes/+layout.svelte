@@ -1,10 +1,8 @@
 <script lang="ts">
+	import '../app.postcss';
+	import '/src/app.postcss';
 	import Header from '$lib/components/Header.svelte';
 </script>
-
-<svelte:head>
-    <link rel="stylesheet" href="/css/global.css">
-</svelte:head>
 
 <Header />
 <slot />
@@ -13,11 +11,10 @@
 	/* Header/Nav styles go here */
 	@font-face {
 		font-family: 'Garet Book';
-		src:url('/fonts/garet-book.ttf') format('truetype'),
-				url('/fonts/garet-book.ttf') format('woff'),
-				url('/fonts/garet-book.ttf') format('woff2'),
-				url('/fonts/garet-book.ttf') format('svg'),
-				url('/fonts/garet-book.ttf') format('embedded-opentype');
+		src: url('/fonts/garet-book.ttf') format('truetype'),
+			url('/fonts/garet-book.ttf') format('woff'), url('/fonts/garet-book.ttf') format('woff2'),
+			url('/fonts/garet-book.ttf') format('svg'),
+			url('/fonts/garet-book.ttf') format('embedded-opentype');
 		font-weight: normal;
 		font-display: swap;
 	}
@@ -45,13 +42,7 @@
 		box-sizing: border-box;
 	}
 
-	@media screen and (min-width: 1240px) {
-		:root {
-			--fluid-screen: calc(var(--fluid-max-width) * 1px);
-		}
-	}
 	:global(body) {
-		font-size: var(--step-0);
 		background-color: #d0b3a1;
 	}
 </style>

@@ -2,35 +2,36 @@
   import { storyblokEditable } from '@storyblok/svelte';
   export let product;
   export let slug;
-  console.log('product')
-  console.log(product)
 </script>
-<div class="thumbnail" use:storyblokEditable={product}>
+
+<div class="thumbnail" data-productname={product.productName} use:storyblokEditable={product}>
   <a href="/{slug}">
     <img src={product.image.filename} alt={product.image.filename} />
   </a>
-  <h2 class="info">{product.productName}</h2>
 </div>
 
-<style>
+<style lang="postcss">
   .thumbnail {
     overflow: hidden;
-    width: 80%;
     margin: 10% auto;
     height: inherit;
     max-height: 100%;
-    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
-  .info {
-		font-weight: bold;
+  .thumbnail:after {
+    content: attr(data-productname);
+    font-size: rfs(1.8rem);
+    font-weight: bold;
 		color: #777;
-	}
+  }
 
   a {
 		color: unset;
 		text-decoration: none;
-		height: 83%;
+		height: rfs(83%);
 		display: inline-block;
 		margin: auto;
 		object-fit: cover;
