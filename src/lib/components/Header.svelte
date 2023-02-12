@@ -81,9 +81,4 @@ header > a {
 		text-align: center;
 	}
 
-	@media screen and (min-width: 1240px) {
-		:root {
-			--fluid-screen: calc(var(--fluid-max-width) * 1px);
-		}
-	}
 </style>

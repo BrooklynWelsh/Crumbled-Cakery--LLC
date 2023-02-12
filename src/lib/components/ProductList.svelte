@@ -74,9 +74,12 @@
 		width: 85%;
 		height: auto;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		grid-auto-rows: 50vh;
+		grid-template-columns: repeat(auto-fill, minmax(17%, 2fr));
+		grid-auto-rows: minmax(16%, 1fr);
 		margin: auto;
+		align-items: stretch;
+		row-gap: 5%;
+		column-gap: 7%
 	}
 
 	.item {

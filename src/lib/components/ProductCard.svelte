@@ -23,7 +23,6 @@
   }
 
   .info {
-		margin-top: 10px;
 		font-weight: bold;
 		color: #777;
 	}
