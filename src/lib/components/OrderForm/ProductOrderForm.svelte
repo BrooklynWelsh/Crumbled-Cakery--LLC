@@ -6,6 +6,8 @@
 
     console.log('blok')
     console.log(blok)
+
+    let productImage
     const blokOptions = blok.options
 
     const ordering = {}, // map for efficient lookup of sortIndex
@@ -18,16 +20,19 @@
 						.sort((a,b) => {
 							return (ordering[a[0]] - ordering[b[0]]) || a[0].localeCompare(b[0])
 						})
+
 </script>
 
 <section class="form-section" use:storyblokEditable={blok}>
     <section class="flex-item">
-        <img id="product-image" src={blok.image.filename} /> 
-        {#if blok.image.filename.includes('placeholder')}
-            <hr>
-            <strong>WARNING: THIS IMAGE IS A PLACEHOLDER</strong><br>
-            <strong>NOT FOR PUBLIC USE, CHANGE BEFORE GOING PUBLIC!!</strong>
-        {/if}
+        <img bind:this={productImage} id="product-image" src={blok.image.filename} />
+        {#key productImage}
+            {#if productImage && productImage.src.includes('placeholder')}
+                <hr>
+                <strong>WARNING: THIS IMAGE IS A PLACEHOLDER</strong><br>
+                <strong>NOT FOR PUBLIC USE, CHANGE BEFORE GOING PUBLIC!!</strong>
+            {/if}
+        {/key}
     </section>
     <form id="order-form" method="POST">
         <section class="form-info-section" use:storyblokEditable={blok}>
