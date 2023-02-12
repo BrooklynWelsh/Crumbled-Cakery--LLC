@@ -89,17 +89,6 @@
 </article>
 
 <style>
-	:global(.tier) {
-		fill: rgba(139, 106, 95, 1);
-		background-color: rgba(139, 106, 95, 1);
-		border-radius: 10px;
-		height: 100%;
-		width: 100%;
-	}
-
-	:global(fieldset) {
-		border: none;
-	}
 
 	#body {
 		height: 77vh;

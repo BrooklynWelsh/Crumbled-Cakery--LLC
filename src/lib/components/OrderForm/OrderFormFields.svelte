@@ -82,16 +82,22 @@
 		{/key}
 	{:else if optionTitle === 'sizeOptions'}
 		<section class="form-option">
-			<OrderFieldDropDown sizeOptions={optionArray} />
+			<fieldset>
+				<OrderFieldDropDown sizeOptions={optionArray} />
+			</fieldset>
 		</section>
 	{:else if optionTitle === 'styleOptions'}
 	<section class="form-option">
-		<label for="{optionArray[0].component}">Style:</label>
-		<OrderFieldDropDown topLevelOption={optionArray} /> 
+		<fieldset>
+			<label for="{optionArray[0].component}">Style:</label>
+			<OrderFieldDropDown topLevelOption={optionArray} />
+		</fieldset>
 	</section>
 	{:else if optionTitle === 'countOptionsAndPricing'}
 	<section class="form-option">
-		<OrderFieldDropDown countOptionsAndPricing={optionArray} />
+		<fieldset>
+			<OrderFieldDropDown countOptionsAndPricing={optionArray} />
+		</fieldset>
 	</section>
 	{:else}
 		{#each optionArray as topLevelOption}

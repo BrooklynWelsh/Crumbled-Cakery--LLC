@@ -41,11 +41,6 @@
         margin-right: 3%;
     }
 
-    :global(.form-option) {
-        display: flex;
-        flex-direction: column;
-    }
-
     .gift-option {
         align-items: flex-start;
     }

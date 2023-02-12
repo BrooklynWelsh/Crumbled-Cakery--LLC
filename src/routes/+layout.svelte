@@ -2,6 +2,10 @@
 	import Header from '$lib/components/Header.svelte';
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="/css/global.css">
+</svelte:head>
+
 <Header />
 <slot />
 
@@ -39,10 +43,6 @@
 		padding: 0;
 		margin: 0;
 		box-sizing: border-box;
-	}
-
-	:global(fieldset) {
-		position: relative;
 	}
 
 	/* :global(legend) {

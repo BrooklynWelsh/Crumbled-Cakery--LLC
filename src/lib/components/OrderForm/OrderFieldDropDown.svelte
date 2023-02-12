@@ -69,20 +69,3 @@
 {:else if setOptions}
   <SetOption {setOptions} />
 {/if}
-
-<style>
-  :global(select) {
-    min-width: 40%;
-    width: 40%;
-  }
-
-  :global(select:focus) {
-    min-width: 50%;
-    width: 100%;
-  }
-
-  :global(textarea) {
-    margin-top: 1%;
-    width: auto;
-  }
-</style>

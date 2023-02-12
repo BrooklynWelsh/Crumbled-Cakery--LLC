@@ -11,11 +11,3 @@
 {/each}
 
 <div transition:fly class="tier" style="width: {50 * (tier.diameter / 10)}%; height: {baseHeight}%;"></div>
-
-<style>
-  :global(.tier) {
-    fill: rgba(139, 106, 95, 1);
-    background-color: rgba(139, 106, 95, 1);
-    border-radius: 10px;
-  }
-</style>
