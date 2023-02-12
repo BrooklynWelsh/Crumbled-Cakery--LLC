@@ -1,8 +1,10 @@
 <script lang="ts">
-    export let countOptionsAndPricing;
-    let selected;
+	import { afterUpdate } from "svelte";
 
-    const selectChange = (event) => {
+  export let countOptionsAndPricing;
+  let selected;
+
+  const selectChange = (event) => {
     // Add/remove textarea element from fieldset depending on whether or not the "custom" option is selected
 		const freeInput = event.target.parentElement.querySelector('textarea')
 		if (selected === 'custom') {
@@ -16,6 +18,11 @@
 			freeInput.style.display = 'none';
 		}
 	}
+
+  afterUpdate(() => {
+    console.log(countOptionsAndPricing)
+    selected = countOptionsAndPricing[0].actualCount
+  })
 </script>
 
  <label for="count">Count:</label>

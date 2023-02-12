@@ -136,7 +136,6 @@ header > a {
 		content: ' ';
 		display: block;
 		width: 100%;
-		height: 65px;
 		position: absolute;
 	}
 

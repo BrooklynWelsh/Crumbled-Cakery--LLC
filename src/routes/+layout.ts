@@ -29,9 +29,6 @@ export const load = (async () => {
       resolve_links: 'url'
     })
 
-    console.log('layout.ts')
-    console.log(dataProductOrderForm)
-    console.log(dataProductOrderForm.data)
     return {
       storyblokApi,
       products: dataProductOrderForm.data.story
