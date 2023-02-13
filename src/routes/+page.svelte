@@ -5,7 +5,7 @@
 	import type { PageData } from '$types';
 	export let data: PageData;
 	import Carousel from '$lib/components/Carousel.svelte';
-	import getProductMetadata from '$lib/utils/client/getProductMetadata';
+	import getProductMetadata from '$lib/utils/server/getProductMetadata';
 </script>
 
 <Carousel metadataObject={getProductMetadata(data)} />

@@ -6,13 +6,13 @@
         "javascript",
         "typescript",
     ],
-    "standard.autoFixOnSave": true,
+    "standard.autoFixOnSave": false,
     "[typescript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false
     },
     "[javascript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false
     }
 }

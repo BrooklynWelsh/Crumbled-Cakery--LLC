@@ -28,10 +28,5 @@
         "name": "Special Orders",
         "imageLoc": "/images/products/placeholders/special_order_placeholder.jpg",
         "link": "/order/special-orders"
-    },
-    {
-        "name": "Rentals",
-        "imageLoc": "/images/products/placeholders/rentals_placeholder.jpg",
-        "link": "/order/rentals"
     }
 ]
