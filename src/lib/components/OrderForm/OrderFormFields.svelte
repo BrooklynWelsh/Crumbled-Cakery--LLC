@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import OrderFieldDropDown from './OrderFieldDropDown.svelte';
 	import SubForm from './SubForm.svelte'
+	import CountOption from "./FormFields/CountOption.svelte";
+  	import SizeOption from "./FormFields/SizeOption.svelte";
 	export let blok;
 	export let allOptions;
 
@@ -10,6 +12,8 @@
 	let selectedProductObject = null
 	let productTypes = null
 	let singularProductName = null
+	let activeCounts = []
+
 
 	console.log('alloptions')
 	console.log(allOptions)
@@ -64,6 +68,7 @@
 	</fieldset>
 </section> -->
 
+<!-- TODO: Both OrderFormFields and OrderFieldDropDown has similar if-else blocks, need to refactor -->
 {#each allOptions as [optionTitle, optionArray]}
 	{#if optionTitle === 'productTypes'}
 		<section class="form-option">
@@ -78,14 +83,10 @@
 			</fieldset>
 		</section>
 		{#key selectedProductObject}
-		<SubForm blok={selectedProductObject} /> <!-- TODO: Create Sub order form object here -->
+		<SubForm blok={selectedProductObject} />
 		{/key}
 	{:else if optionTitle === 'sizeOptions'}
-		<section class="form-option">
-			<fieldset>
-				<OrderFieldDropDown sizeOptions={optionArray} />
-			</fieldset>
-		</section>
+		<SizeOption sizeOptions={optionArray} bind:activeCounts={activeCounts}/>
 	{:else if optionTitle === 'styleOptions'}
 	<section class="form-option">
 		<fieldset>
@@ -118,19 +119,19 @@
 	{/if}
 {/each}
 
-<style>
+<style lang="postcss">
 
-	div {
+	:global(div) {
 		margin-bottom: 10px;
 	}
 
-	label {
-    display: block;
+	:global(label) {
+    	display: block;
 		max-width: 100%;
 		width: auto;
-  }
+  	}
 
-	fieldset {
+	:global(fieldset) {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -138,12 +139,12 @@
 		margin-top: 2%;
 	}
 
-	textarea {
+	:global(textarea) {
     margin-top: 1%;
     width: auto;
-  }
+ 	}
 
-	.form-option {
+	:global(.form-option) {
 		display: flex;
 		flex-direction: column;
 	}

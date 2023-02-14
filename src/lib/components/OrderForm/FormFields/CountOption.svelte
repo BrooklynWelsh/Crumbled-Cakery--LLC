@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { afterUpdate } from "svelte";
-
   export let countOptionsAndPricing;
   let selected;
 
@@ -18,22 +16,17 @@
 			freeInput.style.display = 'none';
 		}
 	}
-
-  afterUpdate(() => {
-    console.log(countOptionsAndPricing)
-    selected = countOptionsAndPricing[0].actualCount
-  })
 </script>
 
  <label for="count">Count:</label>
  <select bind:value={selected}  on:change="{(event) => selectChange(event)}" required id={countOptionsAndPricing.component} name={countOptionsAndPricing.component} form="order-form">
-   <option selected value="">--Please choose an option--</option>
-   {#each countOptionsAndPricing as option}
-     {#if option.component === 'customOptionText'}
-       <option value="custom">{option.customOptionText}</option>
-     {:else}
-       <option value={option.actualCount}>{option.countName || option.actualCount}</option>
-     {/if}
-   {/each}
+      <option selected value="">--Please choose an option--</option>
+      {#each countOptionsAndPricing as option}
+        {#if option.component === 'customOptionText'}
+          <option value="custom">{option.customOptionText}</option>
+        {:else}
+          <option value={option.actualCount}>{option.countName || option.actualCount}</option>
+        {/if}
+      {/each}
  </select>
  <textarea placeholder="Please enter your count here." rows="3" cols="33" name="custom-count" id="custom-count" style="display:none"/>

@@ -5,6 +5,18 @@
 	font-size: rfs(4rem);
 } */
 
+* {
+	@font-face {
+		font-family: 'Garet Book';
+		src: url('/fonts/garet-book.ttf') format('truetype'),
+			url('/fonts/garet-book.ttf') format('woff'), url('/fonts/garet-book.ttf') format('woff2'),
+			url('/fonts/garet-book.ttf') format('svg'),
+			url('/fonts/garet-book.ttf') format('embedded-opentype');
+		font-weight: normal;
+		font-display: swap;
+	}
+}
+
 fieldset {
 	position: relative;
 	border: none;
@@ -36,4 +48,14 @@ textarea {
 .form-option {
 	display: flex;
 	flex-direction: column;
+}
+
+legend {
+	font-size: rfs(1.3rem);
+	text-transform: uppercase;
+}
+
+label {
+	font-size: rfs(1.2rem);
+	text-transform: uppercase;
 }

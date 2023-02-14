@@ -36,10 +36,13 @@
 
 	:global(button, label, select, textarea) {
 		font-family: inherit;
-		font-size: 100%;
 		padding: 0;
 		margin: 0;
 		box-sizing: border-box;
+	}
+
+	:global(select, textarea) {
+		font-size: 100%;
 	}
 
 	:global(body) {

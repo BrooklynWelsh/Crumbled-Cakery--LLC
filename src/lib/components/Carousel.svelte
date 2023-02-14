@@ -69,14 +69,27 @@
 	</Splide>
 </div>
 
-<style>
+<style lang="postcss">
 	.wrapper {
 		max-width: '50vw';
 		margin: 2% auto;
 	}
-	.splide__slide {
-		background: #eee;
+
+	img {
+		border-radius: 20px;
+		-webkit-box-shadow: 2px 2px 21px 4px rgb(0 0 0 / 60%);
+		-moz-box-shadow: 2px 2px 21px 4px rgba(0, 0, 0, 60%);
+		box-shadow: 2px 2px 21px 4px rgb(0 0 0 / 60%);
 	}
+
+	:global(.splide--slide) {
+		margin-top: rfs(1rem);
+	}
+
+	:global(.splide__track) {
+		overflow: visible;
+	}
+
 	.splide__slide img {
 		width: 100%;
 		height: 100%;

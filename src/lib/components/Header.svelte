@@ -8,12 +8,12 @@
 
 <header>
 	<h3>
-		<a>ORDER</a>
+		<a href="/order">ORDER</a>
 	</h3>
 	<h3>
 		<a>EVENTS</a>
 	</h3>
-	<a>
+	<a href="/">
 		<svelte:component this={Logo} />
 	</a>
 	<h3>
@@ -59,6 +59,7 @@ header > a {
 		font-weight: normal;
 		color: #cbae9d;
 		text-shadow: 1px 1px 4px;
+		font-size: rfs(2rem);
 	}
 
 	#header-logo {

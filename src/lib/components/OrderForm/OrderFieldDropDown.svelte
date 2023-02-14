@@ -62,10 +62,7 @@
   </select>
   <textarea rows="3" cols="33" name="{topLevelOption[0].component}-custom-text" id="{topLevelOption[0].component}-custom-text" placeholder="Let us know what {topLevelOption[0].component} you want here!" style="display:none"/>
 {:else if countOptionsAndPricing && countOptionsAndPricing.length > 0}
-  <CountOption {countOptionsAndPricing} />
-{:else if sizeOptions}
-    <SizeOption {sizeOptions} bind:activeCounts={activeCounts}/>
-    <CountOption countOptionsAndPricing={activeCounts} />
+  <CountOption {countOptionsAndPricing} />  
 {:else if setOptions}
   <SetOption {setOptions} />
 {/if}
