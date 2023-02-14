@@ -33,10 +33,9 @@
 
     .form-section {
         display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
+        justify-content: center;
+        gap: 5%;
+        align-items: stretch;
         margin-left: 3%;
         margin-right: 3%;
     }
@@ -55,8 +54,7 @@
 
     .flex-item {
         flex-basis: auto;
-    align-self: flex-start;
-    margin-top: 8%;
+        align-self: flex-start;
         max-width: 40%;
     }
 

@@ -31,3 +31,9 @@ import { onMount } from 'svelte';
 		{/if}
 	</div>
 {/key}
+
+<style>
+	div {
+		margin-top: 4%;
+	}
+</style>
