@@ -72,7 +72,7 @@
 
 <style>
   select {
-    min-width: 80%;
+    min-width: 100%;
     max-width: 100%;
   }
 

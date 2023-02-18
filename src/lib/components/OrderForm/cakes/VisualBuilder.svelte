@@ -67,7 +67,7 @@
 						<figcaption style="grid-area: 1/1/{tier.get('layers').length + 1}/1;">
 							Tier {tier.id}
 						</figcaption>
-            <div>
+            <div class="tier-bracket-container">
               {#each tier.layers as layer, index (layer.layerIndex)}
               <div class='tier-bracket'></div>
               {/each}
@@ -103,7 +103,7 @@
 	}
 
 	#form-container > * {
-		flex-basis: 50%;
+		flex-basis: 40%;
 	}
 
 	#cake-form {
@@ -140,15 +140,22 @@
 	}
 
 	.row {
-    padding: 0.2%;
+		padding: 0.2%;
+		margin-bottom: 4px;
 	}
 
 	.tier-container {
 		display: grid;
-		grid-template-columns: auto 2.2% 54%;
+		grid-template-columns: 9% 10.2% 56%;
 		justify-content: center;
-    justify-items: center;
+    	justify-items: center;
 		width: 100%;
+	}
+
+	.tier-bracket-container {
+		margin-bottom: 0;
+		align-self: stretch;
+		justify-self: flex-start;
 	}
 
   .tier-bracket {
@@ -173,11 +180,9 @@
   }
 
 	figcaption {
-		margin-right: 50%;
 		grid-area: 1/1/1/1;
 		text-align: center;
 		place-self: center;
-    width: 100%;
 	}
 
 	.column {
