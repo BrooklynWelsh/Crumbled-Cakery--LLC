@@ -86,10 +86,6 @@
 
 <style>
 
-	div {
-		margin-bottom: 10px;
-	}
-
 	label {
 		max-width: 100%;
 		width: auto;

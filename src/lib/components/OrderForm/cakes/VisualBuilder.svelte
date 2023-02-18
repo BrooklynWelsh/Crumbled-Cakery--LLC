@@ -156,6 +156,7 @@
     border-left: solid black 2px;
     height: 100%;
     width: 100%;
+	margin-bottom: 0;
   }
 
   .tier-bracket:first-of-type {

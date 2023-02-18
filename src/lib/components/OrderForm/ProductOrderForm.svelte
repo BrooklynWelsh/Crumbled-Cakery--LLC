@@ -101,14 +101,15 @@
 
     img {
         flex-basis: 30%;
-    flex-shrink: 1;
-    /* min-width: 20%; */
-    object-fit: cover;
-    max-width: 100%;
+        flex-shrink: 1;
+        /* min-width: 20%; */
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 62vh;
         border-radius: 3%;
-    -webkit-box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 60%);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 60%);
-    box-shadow: 2px 2px 13px 0px rgb(0 0 0 / 60%);
+        -webkit-box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 60%);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 60%);
+        box-shadow: 2px 2px 13px 0px rgb(0 0 0 / 60%);
     }
 
     #submit-button {
