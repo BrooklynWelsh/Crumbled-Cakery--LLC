@@ -90,6 +90,10 @@
 
 <style>
 
+	h2 {
+		text-align: center;
+	}
+
 	#body {
 		height: 77vh;
 	}
