@@ -6,29 +6,15 @@
   export let topLevelOption;
   export let countOptionsAndPricing;
   export let setOptions;
-  export let sizeOptions;
-  console.log('CALL TO DROPDOWNFIELD.SVELTE\n')
-  console.log('top level ')
-  console.log(topLevelOption)
-  console.log('countOptionsAndPricing')
-  console.log(countOptionsAndPricing)
-  console.log('setOptions')
-  console.log(setOptions)
-  console.log('sizeOptions')
-  console.log(sizeOptions)
   let selected;
-  let activeCounts = [];
 
   const selectChange = (event) => {
     // Add/remove textarea element from fieldset depending on whether or not the "custom" option is selected
 		const freeInput = event.target.parentElement.querySelector('textarea')
 		if (selected === 'custom') {
-      console.log('true')
-      console.log(freeInput)
 			freeInput.required = true;
 			freeInput.style.display = 'block';
 		} else {
-      console.log('false')
 			freeInput.required = false;
 			freeInput.style.display = 'none';
 		}

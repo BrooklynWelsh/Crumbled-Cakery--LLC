@@ -6,12 +6,9 @@
     // Add/remove textarea element from fieldset depending on whether or not the "custom" option is selected
 		const freeInput = event.target.parentElement.querySelector('textarea')
 		if (selected === 'custom') {
-      console.log('true')
-      console.log(freeInput)
 			freeInput.required = true;
 			freeInput.style.display = 'block';
 		} else {
-      console.log('false')
 			freeInput.required = false;
 			freeInput.style.display = 'none';
 		}

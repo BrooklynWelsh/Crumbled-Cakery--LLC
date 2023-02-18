@@ -12,17 +12,11 @@
   export let tierOption: Object;
   export let tier: Tier
 
-  console.log(tierOption)
-  console.log(tier)
-
   const dispatch = createEventDispatcher();
 
   const selectChange = (event: Event) => {
-    console.log('change')
-    console.log(event)
     // Add/remove textarea element from fieldset depending on whether or not the "custom" option is selected
     const target = (event.target as HTMLSelectElement)
-    console.log(event.target)
     if (target && target.parentElement) {
       if (target.parentElement.dataset.component !== undefined && target.parentElement.dataset.component !== null) {
         dispatch('update', new CakeUpdate({

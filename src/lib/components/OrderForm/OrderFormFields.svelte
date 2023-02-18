@@ -14,29 +14,17 @@
 	let singularProductName = null
 	let activeCounts = []
 
-
-	console.log('alloptions')
-	console.log(allOptions)
-
-	console.log('blok')
-	console.log(blok)
-
 	if (blok && blok.productName.endsWith('s')) {
 		singularProductName = blok.productName.slice(0, blok.productName.length - 1)
 	}
 
 	// If given product has sub-types, choose a default one to render
 	if (Array.isArray(allOptions)) {
-		console.log('productTypes')
-		console.log(allOptions.productTypes)
 		for (const optionArray of allOptions) {
 			if (optionArray[0] === 'productTypes') {
 					productTypes = optionArray[1]
 					selectedProduct = optionArray[1][0].productName
 					selectedProductObject = optionArray[1][0]
-					
-					console.log('selectedobject')
-					console.log(selectedProductObject)
 			}
 		}
 	}
@@ -49,8 +37,6 @@
 
 		if (productTypes !== null) {
 			for (const product of productTypes) {
-				console.log('product')
-				console.log(product)
 				if (product.productName == selectedProduct) {
 					selectedProductObject = product
 					if (document) {

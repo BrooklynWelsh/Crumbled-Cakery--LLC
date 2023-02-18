@@ -4,9 +4,6 @@
 
     export let blok;
 
-    console.log('blok')
-    console.log(blok)
-
     let productImage
     const blokOptions = blok.options
 

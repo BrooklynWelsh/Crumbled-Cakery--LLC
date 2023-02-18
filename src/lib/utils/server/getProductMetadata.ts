@@ -16,7 +16,7 @@ export default (data: PageData): ProductMetadata[] => {
       }
     }
   } catch (e) {
-    console.log('error')
+    console.log('error in getProductMetadata')
     console.error(e)
     throw error(
       500,

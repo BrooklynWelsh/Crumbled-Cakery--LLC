@@ -43,9 +43,6 @@
 			main.sync(thumbs.splide);
 		}
 	});
-
-	console.log('meta obj')
-	console.log(metadataObject)
 </script>
 
 <div class="wrapper">

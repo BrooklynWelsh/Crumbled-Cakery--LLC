@@ -16,9 +16,6 @@
 			starts_with: 'order',
 			is_startpage: false
 		});
-		console.log('data inside productlist');
-		console.log(data);
-		console.log(data.stories)
 		products = data.stories;
 	});
 </script>

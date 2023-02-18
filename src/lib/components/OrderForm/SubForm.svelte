@@ -3,8 +3,6 @@
 
     export let blok;
 
-    console.log('blok')
-    console.log(blok)
     const blokOptions = blok.options
 	const countOptionsAndPricing = blok.countOptionsAndPricing
 	const setOptions = blok.setOptions

@@ -10,8 +10,7 @@
 	import TierOption from './TierOption.svelte';
 
 	export let blok: Object;
-  console.log('BLOK')
-  console.log(blok)
+
 	const thickness = 10;
 	const baseHeight = 10;
 	let cake: CakeBuilder = new CakeBuilder([new Tier(1)], 100);

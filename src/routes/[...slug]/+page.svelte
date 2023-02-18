@@ -4,11 +4,8 @@ import { onMount } from 'svelte';
 	import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte';
 	export let data;
 
-	console.log('DATA')
-	console.log(data)
 	onMount(() => {
 		if (data.story) {
-			console.log(data.story);
 			useStoryblokBridge(data.story.id, (newStory) => (data.story = newStory), {});
 		}
 	});

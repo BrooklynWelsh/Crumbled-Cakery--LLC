@@ -21,8 +21,6 @@ export default class Tier {
   }
 
   set (update: TierUpdate): void {
-    console.log('setting via update')
-    console.log(update)
     if (update.field === 'layers') {
       while (this.layers.length !== update.value) {
         if (this.layers.length < update.value) {
@@ -31,10 +29,7 @@ export default class Tier {
           this.layers.pop()
         }
       }
-      console.log('new layers')
-      console.log(this.layers)
     } else {
-      console.log('else')
       this[update.field] = update.value
     }
   }

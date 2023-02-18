@@ -19,9 +19,6 @@ export async function load ({ params, parent }): PageLoad {
     dataStory = { data: { story: {} } }
     dataStory.data.story = await import('../../../tests/test-json/cake-json.json?json')
     dataStory.data.story = dataStory.data.story.default
-
-    console.log('STORY')
-    console.log(dataStory.data.story)
   } else {
     dataStory = await storyblokApi.get(path, {
       version: 'draft'

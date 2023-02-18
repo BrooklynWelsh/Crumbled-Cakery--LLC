@@ -1,3 +1,5 @@
+import type { Actions } from './$types'
+
 /** @type {import('./$types').Actions} */
 export const actions = {
   default: async (event) => {
@@ -10,5 +12,6 @@ export const actions = {
     console.log(event.request.body)
     console.log('searchParams')
     console.log(event.url.searchParams)
+    
   }
-}
+} satisfies Actions

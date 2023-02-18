@@ -15,7 +15,6 @@
   const selectChange = (event: Event) => {
     // Add/remove textarea element from fieldset depending on whether or not the "custom" option is selected
     const target = (event.target as HTMLSelectElement)
-    console.log(event.target)
     if (target && target.parentElement) {
       if (!(tierOptions.includes(target.id))) {
         const freeInput: HTMLTextAreaElement = (target.parentElement.querySelector('textarea') as HTMLTextAreaElement)
