@@ -12,7 +12,7 @@
 
 <style lang="postcss">
   .thumbnail {
-    overflow: hidden;
+    overflow: visible;
     margin: 10% auto;
     height: inherit;
     max-height: 100%;
@@ -26,6 +26,9 @@
     font-size: rfs(1.8rem);
     font-weight: bold;
 		color: #777;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
   }
 
   a {
@@ -42,6 +45,9 @@
 		width: 100%;
 		object-fit: cover;
 		border-radius: 8px;
+    -webkit-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.4);
 	}
 	article > h2 {
 		text-align: center;

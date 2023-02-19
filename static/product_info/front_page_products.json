@@ -10,19 +10,19 @@
         "link": "/order/cupcakes"
     },
     {
-        "name": "Cake Pops",
-        "imageLoc": "/images/products/placeholders/cakepop_placeholder.jpg",
+        "name": "Cake Gems",
+        "imageLoc": "/images/products/placeholders/Cake-Gem-Placeholder.webp",
         "link": "/order/cakePops"
     },
     {
         "name": "Mini Cupcakes",
-        "imageLoc": "/images/products/placeholders/mini_cupcake_placeholder.jpg",
+        "imageLoc": "/images/products/Butterfly_Kids_Cupcakes.jpg",
         "link": "/order/mini-cupcakes"
     },
     {
-        "name": "Sugar Cookies",
-        "imageLoc": "/images/products/placeholders/sugar_cookie_placeholder.jpg",
-        "link": "/order/sugar-cookies"
+        "name": "Cookies",
+        "imageLoc": "/images/products/Chocolate_Chip_Cookies.JPG",
+        "link": "/order/cookies"
     },
     {
         "name": "Special Orders",

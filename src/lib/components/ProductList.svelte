@@ -7,12 +7,14 @@
 	import { useStoryblokApi } from '@storyblok/svelte';
 	export let blok;
 
+	import getProductMetadata from '$lib/utils/server/getProductMetadata';
+
 	export let products: ProductMetadata[] = []
 	onMount(async () => {
 		const storyblokApi = useStoryblokApi();
 
 		const { data } = await storyblokApi.get('cdn/stories', {
-			version: 'draft',
+			version: 'published',
 			starts_with: 'order',
 			is_startpage: false
 		});
@@ -72,7 +74,7 @@
 		width: 85%;
 		height: auto;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(17%, 2fr));
+		grid-template-columns: repeat(auto-fill, minmax(19%, 2fr));
 		grid-auto-rows: minmax(16%, 1fr);
 		margin: auto;
 		align-items: stretch;

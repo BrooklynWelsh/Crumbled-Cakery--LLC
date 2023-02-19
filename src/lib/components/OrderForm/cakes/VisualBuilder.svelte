@@ -1,12 +1,11 @@
 <script lang="ts">
 	import CakeFormFields from './../cakes/CakeFormFields.svelte';
-	import { storyblokEditable } from '@storyblok/svelte';
 	import type { CakeUpdate } from '$types/ICakeUpdate';
 	import CakeBuilder from '$types/CakeBuilder';
 	import Tier from '$types/Tier';
 	import { fly } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-  import { expoOut } from 'svelte/easing';
+  	import { expoOut } from 'svelte/easing';
 	import TierOption from './TierOption.svelte';
 
 	export let blok: Object;
@@ -51,7 +50,7 @@
 					<legend>Tier {tier.id} Options: </legend>
 					{#each blok.perTierOptions as tierOption}
 						<fieldset data-component={'tier-' + tier.id + '-' + tierOption.component}>
-							<label for={'tier-' + tier.id + '-' + tierOption.component}>{toString(tierOption.title)}</label>
+							<label for={'tier[' + tier.id + '][' + tierOption.component + ']'}>{toString(tierOption.title)}</label>
 							<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} {tier} />
 						</fieldset>
 					{/each}

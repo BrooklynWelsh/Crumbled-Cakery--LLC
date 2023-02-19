@@ -20,11 +20,11 @@
     if (target && target.parentElement) {
       if (target.parentElement.dataset.component !== undefined && target.parentElement.dataset.component !== null) {
         dispatch('update', new CakeUpdate({
-          update: { field: target.name, value: target.value, tierIndex: parseInt(target?.parentElement.dataset?.component.split('-')[1]) - 1} as TierUpdate
+          update: { field: target.name.substring(target.name.lastIndexOf('[') + 1, target.name.lastIndexOf(']')), value: target.value, tierIndex: parseInt(target?.parentElement.dataset?.component.split('-')[1]) - 1} as TierUpdate
         }))
       } else {
         dispatch('update', new CakeUpdate({
-          update: { field: target.name, value: parseInt(target.value)} as TierCountUpdate
+          update: { field: target.name.substring(target.name.lastIndexOf('[') + 1, target.name.lastIndexOf(']')), value: parseInt(target.value)} as TierCountUpdate
         }))
       }
     }
@@ -41,7 +41,7 @@
   }
 </script>
 
-<select  on:change="{(event) => selectChange(event)}" required id={tierOption.component} name={tierOption.component} form="order-form">
+<select on:change="{(event) => selectChange(event)}" required id={tierOption.component} name={'tier[' + tier.id + '][' + tierOption.component + ']'} form="order-form">
   {#each tierOption.options as option}
       {#if option.toLowerCase() === tier.get(tierOption.component).toString()}
         <option selected value={option}>{toString(option, tierOption.component)}</option>
