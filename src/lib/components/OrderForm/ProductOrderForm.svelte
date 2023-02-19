@@ -31,7 +31,7 @@
             {/if}
         {/key}
     </section>
-    <form id="order-form" method="POST">
+    <form id="order-form" method="POST" action="?/add_to_cart">
         <section class="form-info-section" use:storyblokEditable={blok}>
             <h2>{blok.productName}</h2>
             <h4>Starting at ${blok.startingPrice}</h4>  <!-- TODO: Get rid of explicit field and just grab the minimum price from countOptionsAndPricing (or other option) -->
@@ -40,8 +40,8 @@
         <OrderFormFields {blok} {allOptions}/>
         <section class="form-option gift-option">
             <fieldset>
-                <label for="gift-wrap">Gift wrapping?</label>
-                <input type="checkbox" id="gift-wrap" name="gift-wrap" />
+                <label for="giftWrap">Gift wrapping?</label>
+                <input type="checkbox" id="giftWrap" name="giftWrap" />
             </fieldset>
         </section>
         <section class='add-to-cart-section'>

@@ -37,7 +37,7 @@
 				{/if}
 			{/each}
 		</select>
-		<textarea placeholder="Let us know what style you'd like!" rows="3" cols="33" name="custom-style" id="custom-style" style="display:none;" />
+		<textarea placeholder="Let us know what style you'd like!" rows="3" cols="33" name="customStyle" id="customStyle" style="display:none;" />
 	</fieldset>
 </section>
 
@@ -59,8 +59,8 @@
 
 <section class="form-option">
 	<fieldset>
-		<label for="gift-wrap">Gift wrapping?</label>
-		<input type="checkbox" id="gift-wrap" name="gift-wrap" />
+		<label for="giftWrap">Gift wrapping?</label>
+		<input type="checkbox" id="giftWrap" name="giftWrap" />
 	</fieldset>
 </section>
 
@@ -69,16 +69,16 @@
 		<legend>Pickup or delivery? (Cakes over 2 tiers require delivery)</legend>
 
 		{#if cake.getTiers().length > 2}
-			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" disabled required/>
+			<input type="radio" name="pickupOrDelivery" id="pickup" value="pickup" disabled required/>
 		{:else}
-			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" required />
+			<input type="radio" name="pickupOrDelivery" id="pickup" value="pickup" required />
 		{/if}
 		<label for="pickup">Pickup</label>
 
 		{#if cake.getTiers().length > 2}
-			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" checked required/>
+			<input type="radio" name="pickupOrDelivery" id="delivery" value="delivery" checked required/>
 		{:else}
-			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" required />
+			<input type="radio" name="pickupOrDelivery" id="delivery" value="delivery" required />
 		{/if}
 		<label for="delivery">Delivery</label>
 	</fieldset>

@@ -31,7 +31,7 @@
 
 	<section id="form-container">
 		<section id="cake-form">
-			<form id="order-form" method="POST">
+			<form id="order-form" method="POST" action="?/add_to_cart">
 				<!-- <section class="form-info-section" use:storyblokEditable={blok}>
             <h2>{blok.productName}</h2>
             <h4>Starting at ${blok.startingPrice}</h4>
