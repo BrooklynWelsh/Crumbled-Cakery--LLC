@@ -73,13 +73,6 @@
 		{/key}
 	{:else if optionTitle === 'sizeOptions'}
 		<SizeOption sizeOptions={optionArray} bind:activeCounts={activeCounts}/>
-	{:else if optionTitle === 'styleOptions'}
-	<section class="form-option">
-		<fieldset>
-			<label for="{optionArray[0].component}">{optionArray[0].component}:</label>
-			<OrderFieldDropDown topLevelOption={optionArray} />
-		</fieldset>
-	</section>
 	{:else if optionTitle === 'countOptionsAndPricing'}
 	<section class="form-option">
 		<fieldset>
@@ -92,7 +85,11 @@
 			{#if topLevelOption.title && Object.keys(topLevelOption).length <= 4} <!-- Must be a free text option -->
 				<fieldset>
 					<label for="{topLevelOption.component}">{topLevelOption.title}</label>
+					{#if topLevelOption.component === 'addOns' || topLevelOption.component === 'comments'}  
 					<textarea id={topLevelOption.component} name={topLevelOption.component} rows="3" cols="33"/>
+					{:else}
+					<textarea id={topLevelOption.component} name={topLevelOption.component} rows="3" cols="33" required/>
+					{/if}
 				</fieldset>
 			{:else if topLevelOption.options} <!-- Must be a multiple choice option -->
 				<fieldset>

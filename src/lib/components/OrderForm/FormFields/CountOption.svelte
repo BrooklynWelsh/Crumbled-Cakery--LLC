@@ -16,7 +16,7 @@
 </script>
 
  <label for="count">Count:</label>
- <select bind:value={selected}  on:change="{(event) => selectChange(event)}" required id={countOptionsAndPricing.component} name={countOptionsAndPricing.component} form="order-form">
+ <select bind:value={selected}  on:change="{(event) => selectChange(event)}" required id={countOptionsAndPricing[0].component} name={countOptionsAndPricing[0].component} form="order-form">
       <option selected value="">--Please choose an option--</option>
       {#each countOptionsAndPricing as option}
         {#if option.component === 'customOptionText'}
