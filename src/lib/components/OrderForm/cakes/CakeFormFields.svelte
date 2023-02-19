@@ -69,16 +69,16 @@
 		<legend>Pickup or delivery? (Cakes over 2 tiers require delivery)</legend>
 
 		{#if cake.getTiers().length > 2}
-			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" disabled/>
+			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" disabled required/>
 		{:else}
-			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" />
+			<input type="radio" name="pickup-or-delivery" id="pickup" value="pickup" required />
 		{/if}
 		<label for="pickup">Pickup</label>
 
 		{#if cake.getTiers().length > 2}
-			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" checked/>
+			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" checked required/>
 		{:else}
-			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" />
+			<input type="radio" name="pickup-or-delivery" id="delivery" value="delivery" required />
 		{/if}
 		<label for="delivery">Delivery</label>
 	</fieldset>
