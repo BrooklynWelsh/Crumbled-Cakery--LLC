@@ -31,8 +31,6 @@ export const actions = {
  */
 const handleCakeOptions = (data: FormData): FormData => {
   const returnData = { tierData: {} }
-  console.log('entries')
-  console.log(data.entries())
 
   const tierOptions = {}
   for (const [key, value] of data.entries()) {

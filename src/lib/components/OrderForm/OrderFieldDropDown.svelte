@@ -36,7 +36,7 @@
   </select>
   <textarea rows="3" cols="33" name="{topLevelOption.component}-custom-text" id="{topLevelOption.component}-custom-text" placeholder="Let us know what {topLevelOption.component} you want here!." style="display:none"/>
 {:else if topLevelOption && Array.isArray(topLevelOption)}
-  <select bind:value={selected}  on:change="{(event) => selectChange(event)}" required id={topLevelOption.component} name={topLevelOption.component} form="order-form">
+  <select bind:value={selected}  on:change="{(event) => selectChange(event)}" required id={topLevelOption[0].component} name={topLevelOption[0].component} form="order-form">
     <option selected value="">--Please choose an option--</option>
   {#each topLevelOption as optionGroup}
     <optgroup label={optionGroup.title}>

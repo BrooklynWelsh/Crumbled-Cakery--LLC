@@ -76,7 +76,7 @@
 	{:else if optionTitle === 'styleOptions'}
 	<section class="form-option">
 		<fieldset>
-			<label for="{optionArray[0].component}">Style:</label>
+			<label for="{optionArray[0].component}">{optionArray[0].component}:</label>
 			<OrderFieldDropDown topLevelOption={optionArray} />
 		</fieldset>
 	</section>

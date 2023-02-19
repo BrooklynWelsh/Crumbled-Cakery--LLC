@@ -26,4 +26,4 @@
         {/if}
       {/each}
  </select>
- <textarea placeholder="Please enter your count here." rows="3" cols="33" name="custom-count" id="custom-count" style="display:none"/>
+ <textarea placeholder="Please enter your count here." rows="3" cols="33" name="customCount" id="customCount" style="display:none"/>
