@@ -9,12 +9,10 @@
   const sizeCountOptions = {};
   selectedSize = sizeOptions[0].sizeName
 
-  onMount(() => {
-    for (const sizeOptionObject of sizeOptions) {
-      sizeCountOptions[sizeOptionObject.sizeName] = sizeOptionObject.countOptions;
-    }
-    activeCounts = sizeCountOptions[selectedSize]
-  })
+  for (const sizeOptionObject of sizeOptions) {
+    sizeCountOptions[sizeOptionObject.sizeName] = sizeOptionObject.countOptions;
+  }
+  activeCounts = sizeCountOptions[selectedSize]
 
   const changeActiveCounts = (event) => {
     activeCounts = sizeCountOptions[event.target.value]

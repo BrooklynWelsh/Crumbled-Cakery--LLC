@@ -29,6 +29,11 @@
 		}
 	}
 
+	console.log('allOpts')
+	console.log(allOptions)
+	
+	console.log(allOptions[1])
+
 	onMount(() => {
 		if (document && selectedProductObject) document.getElementById('product-image').src = selectedProductObject.image.filename
 	})
@@ -62,7 +67,7 @@
 				<legend>Which type of {singularProductName || blok.productName} would you like?</legend>
 				{#each optionArray as product}
 					<div>
-						<label for="productType">{product.productName}</label>
+						<label for="productType">{product.productName}</label> 
 						<input bind:group={selectedProduct} on:change={changeActiveProduct} value="{product.productName}" type="radio" name="productType" id="size" required/>
 					</div>
 				{/each}
@@ -79,7 +84,12 @@
 			<OrderFieldDropDown countOptionsAndPricing={optionArray} />
 		</fieldset>
 	</section>
-	{:else}
+	{:else if optionTitle === 'styleOptions'}
+		<fieldset>
+			<label for={optionArray[0].component}>{optionArray[0].component}:</label>
+			<OrderFieldDropDown topLevelOption={optionArray}/>
+		</fieldset>
+	{:else if optionTitle === 'options'} <!-- All other options that don't have their own sub-category -->
 		{#each optionArray as topLevelOption}
 			<section class="form-option">
 			{#if topLevelOption.title && Object.keys(topLevelOption).length <= 4} <!-- Must be a free text option -->

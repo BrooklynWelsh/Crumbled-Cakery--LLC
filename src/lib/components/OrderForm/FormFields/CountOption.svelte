@@ -1,5 +1,7 @@
 <script lang="ts">
   export let countOptionsAndPricing;
+  console.log('countoptions')
+  console.log(countOptionsAndPricing)
   let selected;
 
   const selectChange = (event) => {

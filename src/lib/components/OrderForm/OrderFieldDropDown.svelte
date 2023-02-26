@@ -6,7 +6,10 @@
   export let topLevelOption;
   export let countOptionsAndPricing;
   export let setOptions;
-  let selected;
+  let selected
+  
+  console.log('TOP LEVEL OPTION');
+  console.log(topLevelOption)
 
   const selectChange = (event) => {
     // Add/remove textarea element from fieldset depending on whether or not the "custom" option is selected
