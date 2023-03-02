@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 
 interface IProductMetadata {
   productName: string
@@ -17,8 +16,8 @@ export default class ProductMetadata implements IProductMetadata {
     this.link = jsonObject.link
   }
 
-  private isValidMetadata (productObject: IProductMetadata | object): productObject is IProductMetadata {
-    const cast = productObject as IProductMetadata
-    return fs.lstatSync((cast).imageLoc).isFile() && Object.prototype.hasOwnProperty.call(cast, 'productName') && Object.prototype.hasOwnProperty.call(cast, 'link')
-  }
+  // private isValidMetadata (productObject: IProductMetadata | object): productObject is IProductMetadata {
+  //   const cast = productObject as IProductMetadata
+  //   return fs.lstatSync((cast).imageLoc).isFile() && Object.prototype.hasOwnProperty.call(cast, 'productName') && Object.prototype.hasOwnProperty.call(cast, 'link')
+  // }
 }

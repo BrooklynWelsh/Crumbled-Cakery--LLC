@@ -12,7 +12,7 @@ declare namespace App {
   // interface Platform {}
   interface Platform {
     env?: {
-      KV_NAMESPACE_HERE: KVNamespace
+      "crumbled-cakery": KVNamespace;
     }
   }
 }
