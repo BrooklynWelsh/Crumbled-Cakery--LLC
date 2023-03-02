@@ -1,0 +1,129 @@
+{
+  "name": "Cakes",
+  "created_at": "2023-01-18T04:31:48.591Z",
+  "published_at": null,
+  "id": 27487,
+  "uuid": "22c90b64-5ccf-4d2b-b2ec-14bee58cc14c",
+  "content": {
+      "_uid": "389dbf84-7426-4bb2-89d7-9e1affd43e74",
+      "image": {
+          "id": 16125,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a-us.storyblok.com/f/1003590/2211x2211/bd17e8e40b/caramel_wafer_cake.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "is_external_url": false
+      },
+      "options": [
+          {
+              "_uid": "aa1dbadb-b901-428e-a03c-5024cca4cce9",
+              "title": "Tiers",
+              "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5"
+              ],
+              "component": "tiers",
+              "_editable": "<!--#storyblok#{\"name\": \"tiers\", \"space\": \"1003590\", \"uid\": \"aa1dbadb-b901-428e-a03c-5024cca4cce9\", \"id\": \"27487\"}-->"
+          },
+          {
+              "_uid": "5f21f311-1d43-4fdd-b756-83038c9d4853",
+              "title": "Style",
+              "options": [
+                  "Simple | Yet beautiful! Stylishly decorated and an eye-catching presentation.",
+                  "Glitz and Glam | Stunning swirls, metallic sprinkles, GLITTER"
+              ],
+              "component": "style",
+              "_editable": "<!--#storyblok#{\"name\": \"style\", \"space\": \"1003590\", \"uid\": \"5f21f311-1d43-4fdd-b756-83038c9d4853\", \"id\": \"27487\"}-->"
+          },
+          {
+              "_uid": "902c05f9-fe9a-40ff-966e-cbd924b4e3c2",
+              "title": "Event",
+              "options": [
+                  "None",
+                  "Celebration",
+                  "Memorial",
+                  "Holiday",
+                  "Wedding",
+                  "Birthday",
+                  "custom"
+              ],
+              "component": "event",
+              "_editable": "<!--#storyblok#{\"name\": \"event\", \"space\": \"1003590\", \"uid\": \"902c05f9-fe9a-40ff-966e-cbd924b4e3c2\", \"id\": \"27487\"}-->"
+          },
+          {
+              "_uid": "861b2d38-7f1b-4caa-bda5-33d1ab8dcea2",
+              "title": "AddOns",
+              "component": "addOns",
+              "_editable": "<!--#storyblok#{\"name\": \"addOns\", \"space\": \"1003590\", \"uid\": \"861b2d38-7f1b-4caa-bda5-33d1ab8dcea2\", \"id\": \"27487\"}-->"
+          },
+          {
+              "_uid": "370be172-7b51-4054-9d37-02487c46e3b3",
+              "title": "Comments",
+              "component": "comments",
+              "_editable": "<!--#storyblok#{\"name\": \"comments\", \"space\": \"1003590\", \"uid\": \"370be172-7b51-4054-9d37-02487c46e3b3\", \"id\": \"27487\"}-->"
+          }
+      ],
+      "component": "Cake",
+      "productName": "Cakes",
+      "startingPrice": "1",
+      "perTierOptions": [
+          {
+              "_uid": "d5376c35-29ed-4726-bbf2-a55454f6a262",
+              "title": "Layers",
+              "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+              ],
+              "component": "layers",
+              "_editable": "<!--#storyblok#{\"name\": \"layers\", \"space\": \"1003590\", \"uid\": \"d5376c35-29ed-4726-bbf2-a55454f6a262\", \"id\": \"27487\"}-->"
+          },
+          {
+              "_uid": "3d49f159-afd9-4ade-a9c7-cb5f388d22e8",
+              "title": "Flavors Offerings",
+              "options": [
+                  "Vanilla"
+              ],
+              "component": "flavors",
+              "_editable": "<!--#storyblok#{\"name\": \"flavors\", \"space\": \"1003590\", \"uid\": \"3d49f159-afd9-4ade-a9c7-cb5f388d22e8\", \"id\": \"27487\"}-->"
+          },
+          {
+              "_uid": "35dc2f30-ab61-445e-b2e0-44a700de8ea3",
+              "title": "Diameter",
+              "options": [
+                  "4",
+                  "6",
+                  "8",
+                  "10",
+                  "12"
+              ],
+              "component": "diameter",
+              "_editable": "<!--#storyblok#{\"name\": \"diameter\", \"space\": \"1003590\", \"uid\": \"35dc2f30-ab61-445e-b2e0-44a700de8ea3\", \"id\": \"27487\"}-->"
+          }
+      ],
+      "_editable": "<!--#storyblok#{\"name\": \"Cake\", \"space\": \"1003590\", \"uid\": \"389dbf84-7426-4bb2-89d7-9e1affd43e74\", \"id\": \"27487\"}-->"
+  },
+  "slug": "cakes",
+  "full_slug": "order/cakes",
+  "sort_by_date": null,
+  "position": -110,
+  "tag_list": [],
+  "is_startpage": false,
+  "parent_id": 17015,
+  "meta_data": null,
+  "group_id": "36e418d9-2f81-46f0-8d1b-0c4c4a3d7ef4",
+  "first_published_at": null,
+  "release_id": null,
+  "lang": "default",
+  "path": null,
+  "alternates": [],
+  "default_full_slug": null,
+  "translated_slugs": null
+}

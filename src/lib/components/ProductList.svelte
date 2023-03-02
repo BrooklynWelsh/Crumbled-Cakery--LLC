@@ -1,21 +1,37 @@
+<svelte:options immutable />
+
 <script lang="ts">
-	export let products: { name: string; imageLoc: string; link: string }[];
+	import { onMount } from 'svelte';
+	import type ProductMetadata from '$types/ProductMetadata';
+	import ProductCard from './ProductCard.svelte';
+	import { useStoryblokApi } from '@storyblok/svelte';
+	export let blok;
+
+	import getProductMetadata from '$lib/utils/server/getProductMetadata';
+
+	export let products: ProductMetadata[] = []
+	onMount(async () => {
+		const storyblokApi = useStoryblokApi();
+
+		const { data } = await storyblokApi.get('cdn/stories', {
+			version: 'published',
+			starts_with: 'order',
+			is_startpage: false
+		});
+		products = data.stories;
+	});
 </script>
 
 <div id="product-list">
 	<article class="container">
 		{#each products as product}
-			<article class="thumbnail">
-				<a href={`${product.link}`}>
-					<img src={`${product.imageLoc}`} alt="egjs" />
-				</a>
-				<h2 class="info">{`${product.name}`}</h2>
-			</article>
+			<ProductCard product={product.content} slug={product.full_slug}/>
 		{/each}
 	</article>
 </div>
 
-<style>
+<style lang="postcss">
+
 	html,
 	body {
 		position: relative;
@@ -23,15 +39,6 @@
 		padding: 0;
 		height: 100%;
 		background: #fff;
-	}
-
-	a {
-		color: unset;
-		text-decoration: none;
-		height: 83%;
-		display: inline-block;
-		margin: auto;
-		object-fit: cover;
 	}
 
 	.header {
@@ -67,9 +74,11 @@
 		width: 85%;
 		height: auto;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		grid-auto-rows: 50vh;
+		grid-template-columns: repeat(auto-fill, minmax(19%, 2fr));
+		grid-auto-rows: minmax(16%, 1fr);
 		margin: auto;
+		align-items: stretch;
+		column-gap: rfs(13rem);
 	}
 
 	.item {
@@ -80,37 +89,6 @@
 	.masonrygrid.horizontal .item {
 		width: auto;
 		height: 250px;
-	}
-
-	/* .thumbnail {
-		height: inherit;
-		max-height: 99%;
-		max-width: 99%;
-	} */
-
-	.thumbnail {
-		overflow: hidden;
-		width: 80%;
-		margin: 10% auto;
-		height: inherit;
-		max-height: 100%;
-		max-width: 100%;
-	}
-
-	a > img {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-		border-radius: 8px;
-	}
-	article > h2 {
-		text-align: center;
-	}
-
-	.item .info {
-		margin-top: 10px;
-		font-weight: bold;
-		color: #777;
 	}
 
 	.item.animate {

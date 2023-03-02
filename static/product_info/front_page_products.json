@@ -1,0 +1,32 @@
+[
+    {
+        "productName": "Cakes",
+        "imageLoc": "/images/products/Caramel_Wafer_Cake.jpg",
+        "link": "/order/cakes"
+    },
+    {
+        "name": "Cupcakes",
+        "imageLoc": "/images/products/Frog_Cupcakes.jpg",
+        "link": "/order/cupcakes"
+    },
+    {
+        "name": "Cake Gems",
+        "imageLoc": "/images/products/placeholders/Cake-Gem-Placeholder.webp",
+        "link": "/order/cakePops"
+    },
+    {
+        "name": "Mini Cupcakes",
+        "imageLoc": "/images/products/Butterfly_Kids_Cupcakes.jpg",
+        "link": "/order/mini-cupcakes"
+    },
+    {
+        "name": "Cookies",
+        "imageLoc": "/images/products/Chocolate_Chip_Cookies.JPG",
+        "link": "/order/cookies"
+    },
+    {
+        "name": "Special Orders",
+        "imageLoc": "/images/products/placeholders/special_order_placeholder.jpg",
+        "link": "/order/special-orders"
+    }
+]

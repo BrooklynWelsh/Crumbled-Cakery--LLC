@@ -1,0 +1,61 @@
+/* Write your global styles here, in PostCSS syntax */
+/* Write your global styles here, in PostCSS syntax */
+/* 
+.info {
+	font-size: rfs(4rem);
+} */
+
+* {
+	@font-face {
+		font-family: 'Garet Book';
+		src: url('/fonts/garet-book.ttf') format('truetype'),
+			url('/fonts/garet-book.ttf') format('woff'), url('/fonts/garet-book.ttf') format('woff2'),
+			url('/fonts/garet-book.ttf') format('svg'),
+			url('/fonts/garet-book.ttf') format('embedded-opentype');
+		font-weight: normal;
+		font-display: swap;
+	}
+}
+
+fieldset {
+	position: relative;
+	border: none;
+}
+
+select {
+	min-width: 40%;
+	width: 40%;
+}
+
+select:focus {
+	min-width: 50%;
+	width: 100%;
+}
+
+textarea {
+	margin-top: 1%;
+	width: auto;
+}
+
+.tier {
+	background-color: rgba(139, 106, 95, 1);
+	border-radius: 10px;
+	fill: rgba(139, 106, 95, 1);
+	height: 100%;
+	width: 100%;
+}
+
+.form-option {
+	display: flex;
+	flex-direction: column;
+}
+
+legend {
+	font-size: rfs(1.3rem);
+	text-transform: uppercase;
+}
+
+label {
+	font-size: rfs(1.2rem);
+	text-transform: uppercase;
+}

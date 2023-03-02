@@ -10,11 +10,11 @@
 		"sourceMap": true,
 		"strict": true,
 		"paths": {
-			"$specificOrderForms": [
-				"src/types/SpecificOrderForms"
+			"$components": [
+				"src/lib/components"
 			],
-			"$specificOrderForms/*": [
-				"src/types/SpecificOrderForms/*"
+			"$components/*": [
+				"src/lib/components/*"
 			],
 			"$lib": [
 				"src/lib"
@@ -24,6 +24,18 @@
 			],
 			"$src": [
 				"src/"
+			],
+			"$static": [
+				"static/"
+			],
+			"$static/*": [
+				"static/*"
+			],
+			"$types": [
+				"src/types/"
+			],
+			"$types/*": [
+				"src/types/*"
 			]
 		},
 	},

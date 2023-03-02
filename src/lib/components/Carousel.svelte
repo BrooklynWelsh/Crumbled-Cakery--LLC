@@ -2,8 +2,8 @@
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '../css/splide-default.min.css';
 	import { onMount } from 'svelte';
-	import { BASE_PRODUCT_IMAGE_URL } from '$lib/consts';
-	export let imageGlob: object;
+	import type ProductMetadata from '$types/ProductMetaData';
+	export let metadataObject: ProductMetadata[];
 
 	let main: Splide;
 	let thumbs: SplideSlide;
@@ -38,11 +38,6 @@
 		}
 	};
 
-	const urls: string[] = [];
-	for (const path in imageGlob) {
-		urls.push(path);
-	}
-
 	onMount(() => {
 		if (main && thumbs) {
 			main.sync(thumbs.splide);
@@ -52,33 +47,46 @@
 
 <div class="wrapper">
 	<Splide options={mainOptions} bind:this={main} aria-labelledby="thumbnails-example-heading">
-		{#each urls as image}
+		{#each metadataObject as obj}
 			<SplideSlide>
 				<img
 					style="display: block; margin: auto; max-height: 100%; max-width: 100%;"
-					src="{image}"
-					alt={image}
+					src={obj.imageLoc}
+					alt={obj.imageLoc}
 				/>
 			</SplideSlide>
 		{/each}
 	</Splide>
 	<Splide options={thumbsOptions} bind:this={thumbs}>
-		{#each urls as image}
+		{#each metadataObject as obj}
 			<SplideSlide>
-				<img src="{image}" alt={image} />
+				<img src={obj.imageLoc} alt={obj.productName} />
 			</SplideSlide>
 		{/each}
 	</Splide>
 </div>
 
-<style>
+<style lang="postcss">
 	.wrapper {
 		max-width: '50vw';
 		margin: 2% auto;
 	}
-	.splide__slide {
-		background: #eee;
+
+	img {
+		border-radius: 20px;
+		-webkit-box-shadow: 2px 2px 21px 4px rgb(0 0 0 / 60%);
+		-moz-box-shadow: 2px 2px 21px 4px rgba(0, 0, 0, 60%);
+		box-shadow: 2px 2px 21px 4px rgb(0 0 0 / 60%);
 	}
+
+	:global(.splide--slide) {
+		margin-top: rfs(1rem);
+	}
+
+	:global(.splide__track) {
+		overflow: visible;
+	}
+
 	.splide__slide img {
 		width: 100%;
 		height: 100%;
