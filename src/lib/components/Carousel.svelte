@@ -9,33 +9,18 @@
 	let thumbs: SplideSlide;
 
 	const mainOptions = {
-		type: 'fade',
-		fixedHeight: '70vh',
-		width: '100%',
+		type: 'loop',
+		fixedHeight: '45vh',
+		fixedWidth: '25vw',
+		easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+		snap: true,
+		flickPower: 200,
+		flickMaxPages: 1,
+		gap: '2rem',
 		pagination: false,
+		perPage: 3,
+		perMove: 1,
 		arrows: false,
-		cover: false
-	};
-
-	const thumbsOptions = {
-		rewind: true,
-		fixedWidth: 104,
-		fixedHeight: 58,
-		isNavigation: true,
-		gap: 10,
-		focus: 'center',
-		pagination: false,
-		cover: true,
-		dragMinThreshold: {
-			mouse: 4,
-			touch: 10
-		},
-		breakpoints: {
-			640: {
-				fixedWidth: 66,
-				fixedHeight: 38
-			}
-		}
 	};
 
 	onMount(() => {
@@ -57,19 +42,14 @@
 			</SplideSlide>
 		{/each}
 	</Splide>
-	<Splide options={thumbsOptions} bind:this={thumbs}>
-		{#each metadataObject as obj}
-			<SplideSlide>
-				<img src={obj.imageLoc} alt={obj.productName} />
-			</SplideSlide>
-		{/each}
-	</Splide>
 </div>
 
 <style lang="postcss">
 	.wrapper {
-		max-width: '50vw';
-		margin: 2% auto;
+		max-width: 50vw;
+		max-height: 25vh;
+		margin: 25vh auto;
+		z-index: 1;
 	}
 
 	img {
@@ -85,20 +65,14 @@
 
 	:global(.splide__track) {
 		overflow: visible;
+		height: 40vh;
 	}
 
-	.splide__slide img {
+	:global(.splide__slide > img) {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		max-height: 100%;
 		max-width: 100%;
-	}
-	.splide--nav {
-		margin-top: 2rem;
-		width: 50vw;
-	}
-
-	.splide__track {
 	}
 </style>

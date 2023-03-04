@@ -12,8 +12,6 @@
 <link href="https://fonts.googleapis.com/css?family=Overpass:100,400" rel="stylesheet" />
 
 <style>
-	#header-logo {
-	}
 
 	label {
 		position: absolute;

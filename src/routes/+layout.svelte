@@ -46,6 +46,6 @@
 	}
 
 	:global(body) {
-		background-color: #d0b3a1;
+		background-color: #fffaf5;
 	}
 </style>

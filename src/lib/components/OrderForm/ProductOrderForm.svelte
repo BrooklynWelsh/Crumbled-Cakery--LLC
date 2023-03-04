@@ -63,7 +63,6 @@
         justify-content: center;
         align-items: stretch;
         gap: 5%;
-        margin-left: 3%;
         margin-right: 3%;
     }
 

@@ -47,13 +47,15 @@
 		<section id="tier-options">
 			{#each cake.getTiers() as tier (tier.id)}
 				<fieldset id={'tier-' + tier.id + '-options'}>
-					<legend>Tier {tier.id} Options: </legend>
-					{#each blok.perTierOptions as tierOption}
-						<fieldset data-component={'tier-' + tier.id + '-' + tierOption.component}>
-							<label for={'tier[' + tier.id + '][' + tierOption.component + ']'}>{toString(tierOption.title)}</label>
-							<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} {tier} />
-						</fieldset>
-					{/each}
+					<details>
+						<summary>Tier {tier.id} Options:</summary>
+						{#each blok.perTierOptions as tierOption}
+							<fieldset data-component={'tier-' + tier.id + '-' + tierOption.component}>
+								<label for={'tier[' + tier.id + '][' + tierOption.component + ']'}>{toString(tierOption.title)}</label>
+								<TierOption on:update={(update) => {{ handleTierCountUpdate(update.detail) }}} {tierOption} {tier} />
+							</fieldset>
+						{/each}
+					</details>
 				</fieldset>
 			{/each}
 		</section>
@@ -61,13 +63,13 @@
 		<section id="cake-visual">
 			<div id="cake-builder">
 				{#each cake.getTiers() as tier (tier.id)}
-					<div class="tier-container">
+					<div transition:fly|local={{ y: -200 }} class="tier-container">
 						<figcaption style="grid-area: 1/1/{tier.get('layers').length + 1}/1;">
 							Tier {tier.id}
 						</figcaption>
             <div class="tier-bracket-container">
               {#each tier.layers as layer, index (layer.layerIndex)}
-              <div class='tier-bracket'></div>
+              <div transition:fly|local={{ y: -200 }} class='tier-bracket'></div>
               {/each}
             </div>
 						{#each tier.layers as layer, index (layer.layerIndex)}
@@ -76,7 +78,7 @@
                 grid-row-start: {tier.layers.length - index}; 
                 grid-row-end: {tier.layers.length - index};
                 grid-column: 3 / 3;">
-								<div class="tier" style="height: {cake.getHeight()}px;" />
+								<div transition:fly|local={{ y: -200 }} class="tier" style="height: {cake.getHeight()}px;" />
 							</div>
 						{/each}
 					</div>
@@ -152,6 +154,10 @@
 		justify-content: center;
     	justify-items: center;
 		width: 100%;
+	}
+
+	legend {
+		pointer-events: none;
 	}
 
 	.tier-bracket-container {

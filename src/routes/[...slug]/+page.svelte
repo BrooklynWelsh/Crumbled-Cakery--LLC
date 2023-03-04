@@ -32,5 +32,6 @@ import { onMount } from 'svelte';
 <style>
 	div {
 		margin-top: 4%;
+		margin-left: 26vw;
 	}
 </style>

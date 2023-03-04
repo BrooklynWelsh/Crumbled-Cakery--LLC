@@ -7,8 +7,6 @@
 	import { useStoryblokApi } from '@storyblok/svelte';
 	export let blok;
 
-	import getProductMetadata from '$lib/utils/server/getProductMetadata';
-
 	export let products: ProductMetadata[] = []
 	onMount(async () => {
 		const storyblokApi = useStoryblokApi();
