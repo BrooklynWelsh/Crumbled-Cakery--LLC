@@ -2,14 +2,24 @@
 
 <!-- out:scale={{ duration: 4000, opacity: 0.9 }} -->
 <script lang="ts">
-	import type { PageData } from '$types';
-	export let data: PageData;
-	import Carousel from '$lib/components/Carousel.svelte';
-	import getProductMetadata from '$lib/utils/server/getProductMetadata';
-</script>
+	import { useStoryblokBridge, StoryblokComponent } from "@storyblok/svelte";
+	import { onMount } from 'svelte';
+	import Home from '$components/Home.svelte';
 
-<Carousel metadataObject={getProductMetadata(data)} />
-<link href="https://fonts.googleapis.com/css?family=Overpass:100,400" rel="stylesheet" />
+	export let data;
+
+	onMount(() => {
+		useStoryblokBridge(
+			data.story.id,
+			(newStory) => (data.story = newStory)
+		);
+	});
+
+	//let frontPageProducts = getProductMetadata(data)
+</script>
+<!-- 
+<Home {data}/>
+<link href="https://fonts.googleapis.com/css?family=Overpass:100,400" rel="stylesheet" /> -->
 
 <style>
 

@@ -1,6 +1,5 @@
 <script>
-	import VisualBuilder from '$components/OrderForm/cakes/VisualBuilder.svelte';
-import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte';
 	export let data;
 
@@ -9,18 +8,18 @@ import { onMount } from 'svelte';
 			useStoryblokBridge(data.story.id, (newStory) => (data.story = newStory), {});
 		}
 	});
+
+	// console.log('DATA IN PAGE>SVLET')
+	// console.log(data)
 </script>
 
 <svelte:head>
 	<title>{data.story.name}</title>
 </svelte:head>
 {#key data}
-	<div>
+	<div class="content-container">
 		{#if data.story}
 			{#if data.slug}
-				<!-- {#if data.slug === 'order/cakes'}
-					<VisualBuilder blok={data.story}/>
-				{/if} -->
 				<StoryblokComponent slug={data.slug} blok={data.story.content} />
 			{:else}
 				<StoryblokComponent blok={data.story.content} />
@@ -28,10 +27,3 @@ import { onMount } from 'svelte';
 		{/if}
 	</div>
 {/key}
-
-<style>
-	div {
-		margin-top: 4%;
-		margin-left: 26vw;
-	}
-</style>

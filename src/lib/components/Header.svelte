@@ -31,13 +31,11 @@
 			// names must be equal
 			return 0;
 		});
-		console.log('PRODUCTS')
-		console.log(products)
 	});
 </script>
 
 <header>
-	<a id="header-logo" href="/">
+	<a id="header-logo" href="/home">
 		<svelte:component this={Logo} />
 	</a>
 	<Hoverable let:hovering={hovering}>
@@ -57,21 +55,21 @@
 	<Hoverable let:hovering={hovering}>
 		<div class="hover-div" class:active={hovering}>
 			<h3>
-				<a>EVENTS</a>
+				<a href='/updates'>UPDATES</a>
 			</h3>
 		</div>
 	</Hoverable>
 	<Hoverable let:hovering={hovering}>
 		<div class="hover-div" class:active={hovering}>
 			<h3>
-				<a>CONTACT</a>
+				<a href='/contact'>CONTACT</a>
 			</h3>
 		</div>
 	</Hoverable>	
 	<Hoverable let:hovering={hovering}>
 		<div class="hover-div" class:active={hovering}>
 			<h3>
-				<a>FAQ</a>
+				<a href='/faq'>FAQ</a>
 			</h3>
 		</div>
 	</Hoverable>
@@ -100,9 +98,12 @@
 	}
 
 	a:any-link {
-		font-size: rfs(3rem);
 		color: #000000;
 		text-decoration: none;
+	}
+
+	li > a:any-link {
+		font-size: rfs(2rem);
 	}
 
 	header > a {
@@ -116,7 +117,7 @@
 		left: 0;
 		top: 0;
 		height: 100vh;
-		width: 25vw;
+		width: 20vw;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
@@ -134,7 +135,7 @@
 		font-weight: lighter;
 		color: #000000;
 		text-shadow: 1px 1px 4px;
-		font-size: rfs(4rem);
+		font-size: rfs(3rem);
 	}
 
 	h3 {
@@ -146,7 +147,7 @@
 		color: #000000;
 		text-shadow: 1px 1px 4px;
 		text-align: center;
-		font-size: rfs(4rem);
+		font-size: rfs(3rem);
 	}
 
 </style>

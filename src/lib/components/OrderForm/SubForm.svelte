@@ -34,7 +34,6 @@
         justify-content: center;
         gap: 5%;
         align-items: stretch;
-        margin-left: 26vw;
         margin-right: 3%;
     }
 

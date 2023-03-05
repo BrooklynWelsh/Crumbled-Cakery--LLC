@@ -1,5 +1,6 @@
 import { apiPlugin, storyblokInit, useStoryblokApi } from '@storyblok/svelte'
 import Cake from '$components/OrderForm/cakes/VisualBuilder.svelte'
+import Home from '$components/Home.svelte'
 import Product from '$components/OrderForm/Product.svelte'
 import ProductList from '$components/ProductList.svelte'
 import ProductCard from '$components/ProductCard.svelte'
@@ -14,6 +15,7 @@ export const load = (async () => {
       use: [apiPlugin],
       components: {
         Cake,
+        Home,
         Product,
         ProductList,
         ProductCard

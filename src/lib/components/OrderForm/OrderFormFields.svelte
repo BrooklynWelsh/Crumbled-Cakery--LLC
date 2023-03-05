@@ -114,10 +114,6 @@
 
 <style lang="postcss">
 
-	:global(div) {
-		margin-bottom: 10px;
-	}
-
 	:global(label) {
     	display: block;
 		max-width: 100%;

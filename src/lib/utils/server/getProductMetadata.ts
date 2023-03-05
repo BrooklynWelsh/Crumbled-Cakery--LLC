@@ -5,6 +5,8 @@ import { error } from '@sveltejs/kit'
 export default (data: PageData): ProductMetadata[] => {
   const productsObject: ProductMetadata[] = []
   try {
+    console.log('DATA')
+    console.log(data.story)
     for (const anObject of data.obj) {
       console.log('OBJ')
       console.log(anObject)

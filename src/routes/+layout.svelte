@@ -7,7 +7,7 @@
 <Header />
 <slot />
 
-<style>
+<style lang="postcss">
 	/* Header/Nav styles go here */
 	@font-face {
 		font-family: 'Garet Book';
@@ -21,6 +21,10 @@
 
 	:global(*) {
 		font-family: 'Garet Book';
+	}
+
+	:global(body:first-of-type(div):only-of-type) {
+		margin-left: 20vw;
 	}
 
 	:global(body) {
