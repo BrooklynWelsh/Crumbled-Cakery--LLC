@@ -103,7 +103,7 @@
 	}
 
 	li > a:any-link {
-		font-size: rfs(2rem);
+		font-size: rfs(2.1rem);
 	}
 
 	header > a {
@@ -117,15 +117,27 @@
 		left: 0;
 		top: 0;
 		height: 100vh;
-		width: 20vw;
+		width: 22vw;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
 		align-items: center;
 		margin: 0 auto;
-		background: #efe4d9;
 		z-index: 2;
+
+		background: linear-gradient(to right, #FFE2CD 89%, #fffaf5 100%);
+		background-size: 100%;
 	}
+
+	/** header:before, header:after {
+		content: "";
+		height: 1px;
+
+		background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(147,147,147,1) 50%,rgba(0,0,0,0) 100%);
+		display: block;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	} */
 
 	header > h3 > a {
 		margin-right: auto;
