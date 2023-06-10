@@ -34,6 +34,7 @@
 		"prettier-plugin-svelte": "^2.8.1",
 		"rollup-plugin-svelte": "^7.1.0",
 		"svelte": "^3.54.0",
+		"svelte-breakpoints": "^0.2.0",
 		"svelte-check": "^2.10.3",
 		"svelte-preprocess": "^4.10.7",
 		"ts-interface-builder": "^0.3.3",
@@ -53,6 +54,8 @@
 		"postcss-import": "^15.1.0",
 		"postcss-nested": "^6.0.1",
 		"rfs": "^9.0.6",
+		"svelte-drawer-component": "^1.2.2",
+		"svelte-sidebar-menu": "^0.9.12",
 		"ts-interface-checker": "^1.0.2",
 		"wrangler": "^2.6.2"
 	}
