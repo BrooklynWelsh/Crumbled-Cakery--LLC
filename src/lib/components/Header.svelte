@@ -3,10 +3,9 @@
 <script lang="ts">
 	import { useStoryblokApi } from '@storyblok/svelte';
 	import { onMount } from 'svelte';
-	import Breakpoints from 'svelte-breakpoints';
-	import type { Readable } from 'svelte/store';
-	import type { BreakpointMatch } from 'svelte-breakpoints';
-	import VerticalHeader from './Header/VerticalHeader.svelte';
+	import Hoverable from "$components/Hoverable.svelte";
+    import Logo from '$lib/images/logo/Crumbled_Cakery_Logo.svelte';
+    import { fly } from "svelte/transition";
 
 	let products;
 	let open = false;
@@ -32,29 +31,55 @@
 			return 0;
 		});
 	});
-
-	const mediaQueries = {
-		sm: '(min-width: 0px)',
-		md: '(min-width: 834px)',
-		lg: '(min-width: 1440px)',
-	};
-
-	let match: Readable<BreakpointMatch>;
-	// type BreakpointMatch = 'sm' | 'md' | 'lg' | 'xl' | undefined
 </script>
 
-
-	<Breakpoints queries={mediaQueries} bind:match>
-		{#if $match === 'lg'}
-			<VerticalHeader {products}/>
-		{:else if $match === 'md' || $match === 'sm'}
-			<!-- Med/small screens use horizontal top header with expandable menu -->
-			<!-- <HorizontalHeader bind:drawer={open} {products}/> -->
-		{/if}
-		<!-- End Med/Small screen header-->
-
-	</Breakpoints>
+<header id="vertical-header" class=" lg:bg-gradient-to-r from-[#FFE2CD] from-[89%] to-[#fff7eb] to-[100%] lg:flex lg:flex-col lg:items-center lg:w-[22vw] lg:h-screen lg:justify-start lg:fixed lg:t-0 lg:l-0">
+    <a href="/home" class="mt-8 object-cover pr-8 pl-2 2xl:pr-12 2xl:pl-4 w-full ">
+        <svelte:component this={Logo} />
+    </a>
+    <Hoverable let:hovering={hovering}>
+        <div class="my-8" class:active={hovering}>
+            <h3 class="text-lg lg:text-4xl text-center text-black">ORDER</h3>
+            {#key hovering}
+                {#if hovering}
+                <ul transition:fly={{ y: -100, duration: 250 }} class="my-8 text-center">
+                    {#each products as product}
+                        <li class="lg:my-4"><a href='/{product.full_slug}' class="text-lg lg:text-3xl">{product.name}</a></li>
+                    {/each}
+                </ul>
+                {/if}
+            {/key}
+        </div>
+    </Hoverable>
+    <Hoverable let:hovering={hovering}>
+        <div class="my-8" class:active={hovering}>
+            <h3 class="text-lg lg:text-4xl text-center text-black">
+                <a href='/updates'>UPDATES</a>
+            </h3>
+        </div>
+    </Hoverable>
+    <Hoverable let:hovering={hovering}>
+        <div class="my-8" class:active={hovering}>
+            <h3 class="text-lg lg:text-4xl text-center text-black">
+                <a href='/contact'>CONTACT</a>
+            </h3>
+        </div>
+    </Hoverable>	
+    <Hoverable let:hovering={hovering}>
+        <div class="my-8" class:active={hovering}>
+            <h3 class="text-lg lg:text-4xl text-center text-black">
+                <a href='/faq'>FAQ</a>
+            </h3>
+        </div>
+    </Hoverable>
+</header>
 
 <style lang="postcss">
+	header {
+		/* Dark mode: rich-black #0C1821 */
+	}
 
+	h3 {
+		text-shadow: 1px 1px 4px;	/* No text-shadow support for TailwindCSS currently */
+		}
 </style>
