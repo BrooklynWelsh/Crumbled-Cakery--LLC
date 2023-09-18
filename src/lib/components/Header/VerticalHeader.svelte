@@ -6,7 +6,7 @@
     export let products;
 </script>
 
-<header id="vertical-header">
+<header id="vertical-header" class="w-[22vw] h-screen justify-start">
     <a id="header-logo" href="/home">
         <svelte:component this={Logo} />
     </a>
@@ -87,10 +87,7 @@
 		position: fixed;
 		left: 0;
 		top: 0;
-		height: 100vh;
-		width: 22vw;
 		display: flex;
-		justify-content: space-between;
 		flex-direction: column;
 		align-items: center;
 		margin: 0 auto;

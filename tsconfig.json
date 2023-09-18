@@ -11,31 +11,31 @@
 		"strict": true,
 		"paths": {
 			"$components": [
-				"src/lib/components"
+				"./src/lib/components"
 			],
 			"$components/*": [
-				"src/lib/components/*"
+				"./src/lib/components/*"
 			],
 			"$lib": [
-				"src/lib"
+				"./src/lib"
 			],
 			"$lib/*": [
-				"src/lib/*"
+				"./src/lib/*"
 			],
 			"$src": [
-				"src/"
+				"./src/"
 			],
 			"$static": [
-				"static/"
+				"./static/"
 			],
 			"$static/*": [
-				"static/*"
+				"./static/*"
 			],
 			"$types": [
-				"src/types/"
+				"./src/types/"
 			],
 			"$types/*": [
-				"src/types/*"
+				"./src/types/*"
 			]
 		},
 	},

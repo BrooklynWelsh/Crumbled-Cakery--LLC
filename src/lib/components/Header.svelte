@@ -7,7 +7,6 @@
 	import type { Readable } from 'svelte/store';
 	import type { BreakpointMatch } from 'svelte-breakpoints';
 	import VerticalHeader from './Header/VerticalHeader.svelte';
-	import HorizontalHeader from './Header/HorizontalHeader.svelte';
 
 	let products;
 	let open = false;
@@ -50,7 +49,7 @@
 			<VerticalHeader {products}/>
 		{:else if $match === 'md' || $match === 'sm'}
 			<!-- Med/small screens use horizontal top header with expandable menu -->
-			<HorizontalHeader bind:drawer={open} {products}/>
+			<!-- <HorizontalHeader bind:drawer={open} {products}/> -->
 		{/if}
 		<!-- End Med/Small screen header-->
 
